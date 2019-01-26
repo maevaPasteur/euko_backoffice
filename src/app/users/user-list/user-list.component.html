@@ -1,0 +1,57 @@
+<div class="container user-list">
+  <div class="box full">
+    <div class="box-container">
+      <div class="header underline">
+        <h2 class="title light medium">Utilisateurs</h2>
+      </div>
+      <div class="content" id="dvData">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="text bold">Id</th>
+            <th class="text bold">Pseudo</th>
+            <th class="text bold">Age</th>
+            <th class="text bold">Ville</th>
+            <th class="text bold">Statut</th>
+            <th class="text bold">Argent prêté</th>
+            <th class="text bold">Argent reçu</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <td>
+              <a href="#" class="bg circle small pink">
+                <span class="text bold white ">{{ user.id }}</span>
+              </a>
+            </td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.localisation }}</td>
+            <td *ngIf="(user.investment.length == 0) && (user.loaning.length == 0)">Neutre</td>
+            <td *ngIf="(user.investment.length > 0) && (user.loaning.length == 0)">Investisseur</td>
+            <td *ngIf="(user.investment.length == 0) && (user.loaning.length > 0)">Emprunteur</td>
+            <td *ngIf="(user.investment.length > 0) && (user.loaning.length > 0)">Mix</td>
+            <td>
+              <span class="text bold">
+                {{ getSum(user.investment) }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                {{ getSum(user.loaning) }}
+              </span>
+            </td>
+            <td class="action-container">
+              <a href="#"><i class="show icon-search"></i></a>
+              <a href="#"><i class="remove icon-remove"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="btnExport" data-name="utilisateurs" class="btn blue excel mb20"><span class="text bold white">Exporter format Excel</span></p>
+    </div>
+  </div>
+</div>
+

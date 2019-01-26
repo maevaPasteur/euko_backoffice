@@ -1,0 +1,33 @@
+<div class="container borrower-list">
+
+
+  <div class="box full">
+    <div class="box-container">
+      <div class="header">
+        <h2 class="title light medium">Liste des projets</h2>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="box small" *ngFor="let project of projects">
+    <div class="box-container">
+      <div class="header underline">
+        <h2 class="title light small">{{ project.title }}</h2>
+      </div>
+      <div class="content">
+        <p class="title bold big dark">{{ project.price }}€</p>
+        <p>{{ project.description }}</p>
+        <p class="mt20"><span class="title bold medium blue">{{ project.interests }}</span> d'intérêt</p>
+        <p *ngIf="project.timeLaps"><span class="title bold medium blue">{{ project.timeLaps }}</span> mois pour rembourser</p>
+        <p>{{ project.createdAr | date : 'dd/mm/yyyy' }}</p>
+        <a class="btn blue" routerLink="/user-list"><span class="text bold white">Voir</span></a>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+

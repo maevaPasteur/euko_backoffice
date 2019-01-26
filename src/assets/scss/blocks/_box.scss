@@ -1,0 +1,41 @@
+.box {
+  &.small {
+    width: 25%;
+  }
+  &.medium {
+    width: 50%;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  .header {
+    padding: 10px 15px;
+    display: block;
+  }
+
+  .box-container {
+    background-color: white;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
+    height: calc( 100% - 10px);
+  }
+
+  .content {
+    padding: 20px 15px;
+
+    &.flex {
+      display: flex;
+
+      .child {
+        &.col2{
+          width: 50%;
+        }
+      }
+    }
+  }
+
+}
+

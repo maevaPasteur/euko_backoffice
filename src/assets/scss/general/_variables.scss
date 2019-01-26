@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Thasadith:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+//$font-title: Thasadith, sans serif;
+//$font-text: Open Sans, sans serif;
+
+$font-title: 'Roboto Condensed', sans-serif;
+$font-text: 'Roboto', sans-serif;
+
+$fontello: 'fontello', sans-serif;
+
+$blue: #5f78f8;
+$green: #97fda5;
+$pink: #fedcdc;
+$light-grey: #e7ebee;
+$dark-grey: #373737;
+$width-menu : 200px;
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+//.box { @include transform(rotate(30deg)); }

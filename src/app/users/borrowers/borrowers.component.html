@@ -1,0 +1,94 @@
+<div class="container borrower-list">
+  <div class="box full">
+    <div class="box-container">
+      <div class="header underline">
+        <h2 class="title light medium">Emprunteurs</h2>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="text bold">Id</th>
+            <th class="text bold">Pseudo</th>
+            <th class="text bold">Refusées</th>
+            <th class="text bold">Qtt</th>
+            <th class="text bold">%</th>
+            <th class="text bold">En attentes</th>
+            <th class="text bold">Qtt</th>
+            <th class="text bold">%</th>
+            <th class="text bold">Empruntées</th>
+            <th class="text bold">Qtt</th>
+            <th class="text bold">%</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <td>
+              <a href="#" class="bg circle small pink">
+                <span class="text bold white ">{{ user.id }}</span>
+              </a>
+            </td>
+            <td>
+              {{ user.username }}ans
+            </td>
+            <td>
+              {{ user.age }}
+            </td>
+            <td>
+              <ul *ngFor="let loan of user.loaning">
+                <li>{{loan.sum}}€</li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let loan of user.loaning">
+                <ul *ngFor="let offer of loan.offers">
+                  <li class="mb5" *ngIf="offer.state === 'reject'">
+                    <a href="#" class="bg circle small blue">
+                      <span class="text bold white ">{{offer.idInvestissor}}</span>
+                    </a>
+                    à
+                    <span class="text bold">
+                      {{offer.interestRate}}%
+                    </span>
+                  </li>
+                </ul>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let loan of user.loaning">
+                <ul *ngFor="let offer of loan.offers">
+                  <li class="mb5" *ngIf="offer.state === 'waiting'">
+                    <a href="#" class="bg circle small blue">
+                      <span class="text bold white ">{{offer.idInvestissor}}</span>
+                    </a>
+                    à
+                    <span class="text bold">
+                      {{offer.interestRate}}%
+                    </span>
+                  </li>
+                </ul>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let loan of user.loaning">
+                <ul *ngFor="let offer of loan.offers">
+                  <li class="mb5" *ngIf="offer.state === 'accept'">
+                    <a href="#" class="bg circle small blue">
+                      <span class="text bold white ">{{offer.idInvestissor}}</span>
+                    </a>
+                    à
+                    <span class="text bold">
+                      {{offer.interestRate}}%
+                    </span>
+                  </li>
+                </ul>
+              </ul>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,64 @@
+header {
+
+  .top {
+    background-color: white;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+}
+
+.container-nav {
+  background-color: $dark-grey;
+  position: fixed;
+  left: 0;
+  top: 45px;
+  height: calc(100% - 45px);
+  width: $width-menu;
+  color: white;
+
+  a {
+    color: white;
+  }
+
+  .nav {
+    margin: 20px 0 20px 10px;
+
+    ul {
+      position: absolute;
+    }
+
+    li {
+      a {
+        padding: 0 15px 0 10px;
+        margin: 5px 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        transition: margin-left ease-out .2s, color ease-out .2s;
+
+        &:hover {
+          margin-left: 10px;
+        }
+
+        &.active {
+          color: #aaaaaa;
+        }
+      }
+
+      &.line {
+        position: absolute;
+        width: 2px;
+        height: 20px;
+        background-color: $pink;
+        left: 0;
+        top: 0;
+        transition: height ease-out 3s, top ease-out .2s;
+      }
+    }
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "user": [
+    { "id": 1,
+      "username": "maevapst",
+      "name": "pasteur",
+      "firstname": "maeva",
+      "birthday": "20140313T00:00:00",
+      "registration": "20140313T00:00:00",
+      "localisation": "Paris",
+      "age": 32,
+      "loaning":[
+        {
+          "title":"Student loan",
+          "description": "I need to repair my computer and my exams are coming soon ! Thank you for your help",
+          "datePost": "2018-12-08T15:29:18.999Z",
+          "sum": 540,
+          "offers": [
+            {
+              "idInvestissor": 4,
+              "usernameInvestissor": "loulou",
+              "dateProposition": "2018-12-08T15:29:18.999Z",
+              "interestRate": 8.2,
+              "dateReject": "2018-12-08T15:29:18.999Z",
+              "dateAgree":"",
+              "state": "reject"
+            },
+            {
+              "idInvestissor": 2,
+              "usernameInvestissor": "louigl",
+              "dateProposition": "2018-12-08T15:29:18.999Z",
+              "interestRate": 5.6,
+              "dateReject": "",
+              "dateAgree":"",
+              "state": "waiting"
+            },
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-12-28T15:24:15.511Z",
+              "interestRate": 4.9,
+              "dateReject":"",
+              "dateAgree": "2018-12-29T15:22:08.511Z",
+              "state": "accept"
+            }
+          ]
+        },
+        {
+          "title":"Dentiste",
+          "description": "Bonjour, j'ai besoin d'une avance en attendant de me faire rembourser par ma mutuelle.",
+          "datePost": "2019-01-12T15:29:18.999Z",
+          "sum": 120,
+          "offers": [
+            {
+              "idInvestissor": 4,
+              "usernameInvestissor": "loulou",
+              "dateProposition": "2018-12-08T15:29:18.999Z",
+              "interestRate": 8.2,
+              "dateReject": "2018-12-08T15:29:18.999Z",
+              "dateAgree":"",
+              "state": "reject"
+            },
+            {
+              "idInvestissor": 2,
+              "usernameInvestissor": "louigl",
+              "dateProposition": "2018-12-08T15:29:18.999Z",
+              "interestRate": 5.6,
+              "dateReject": "",
+              "dateAgree":"",
+              "state": "waiting"
+            },
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-12-28T15:24:15.511Z",
+              "interestRate": 4.9,
+              "dateReject":"",
+              "dateAgree": "2018-12-29T15:22:08.511Z",
+              "state": "accept"
+            }
+          ]
+        }
+      ],
+      "investment":[
+        {
+          "idBorrower": 5,
+          "sum": 130,
+          "usernameBorrower": "lila6412",
+          "dateProposition": "2018-16-28T12:12:11.511Z",
+          "interestRate": 6.2,
+          "state": "reject"
+        },
+        {
+          "idBorrower": 2,
+          "sum": 90,
+          "usernameInvestissor": "louigl",
+          "dateProposition": "2018-12-25T15:26:15.511Z",
+          "interestRate": 5.6,
+          "state": "waiting"
+        },
+        {
+          "idBorrower": 3,
+          "sum": 490,
+          "usernameInvestissor": "riri39",
+          "dateProposition": "2018-12-28T15:24:15.511Z",
+          "interestRate": 4.9,
+          "state": "accept"
+        },
+        {
+          "idBorrower": 5,
+          "sum": 130,
+          "usernameInvestissor": "lila6412",
+          "dateProposition": "2018-12-29T15:24:15.511Z",
+          "interestRate": 4.9,
+          "state": "accept"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "louisgl",
+      "name": "louis",
+      "firstname": "gaulin",
+      "birthday": "1982-05-11T18:25:43.511Z",
+      "registration": "2018-12-22T18:25:43.511Z",
+      "localisation": "Montpellier",
+      "age": 25,
+      "loaning":[
+        {
+          "title":"Car repair",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 700,
+          "offers": [
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 12,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "reject"
+            }
+          ]
+        }
+      ],
+      "investment":[
+        {
+          "idBorrower": 2,
+          "sum": 450,
+          "usernameBorrower": "julio563",
+          "dateProposition": "2018-02-20T12:12:11.511Z",
+          "interestRate": 14,
+          "state": "reject"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "username": "riri39",
+      "name": "Riwan",
+      "firstname": "Mellier",
+      "birthday": "1995-12-23T18:25:43.511Z",
+      "registration": "2018-11-22T18:25:43.511Z",
+      "localisation": "Lyon",
+      "age": 28,
+      "loaning":[
+        {
+          "title":"Car repair",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 700,
+          "offers": []
+        }
+      ],
+      "investment":[
+        {
+          "idBorrower": 5,
+          "sum": 700,
+          "usernameBorrower": "lila6412",
+          "dateProposition": "2018-16-28T12:12:11.511Z",
+          "interestRate": 13.6,
+          "state": "accept"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "username": "loulou",
+      "name": "Louanne",
+      "firstname": "Dumont",
+      "birthday": "1990-02-06T18:25:43.511Z",
+      "registration": "2018-12-05T18:25:43.511Z",
+      "localisation": "Paris",
+      "age": 53,
+      "loaning":[
+        {
+          "title":"Vacances en Bretagne",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 600,
+          "offers": [
+            {
+              "idInvestissor": 1,
+              "usernameInvestissor": "huliom",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 11,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "reject"
+            },
+            {
+              "idInvestissor": 4,
+              "usernameInvestissor": "huliom",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 8,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "accept"
+            }
+          ]
+        }
+      ],
+      "investment":[
+        {
+          "idBorrower": 2,
+          "sum": 582,
+          "usernameBorrower": "riri39",
+          "dateProposition": "2018-16-28T12:12:11.511Z",
+          "interestRate": 12,
+          "state": "reject"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "username": "mimi55",
+      "name": "Mylène",
+      "firstname": "Junior",
+      "birthday": "1994-10-02T18:25:43.511Z",
+      "registration": "2018-11-27T18:25:43.511Z",
+      "localisation": "Paris",
+      "age": 42,
+      "loaning":[
+        {
+          "title":"Avance sur salaire",
+          "description": "Pour l'anniversaire de on fils",
+          "datePost": "2018-08-10T15:29:18.999Z",
+          "sum": 150,
+          "offers": [
+            {
+              "idInvestissor": 4,
+              "usernameInvestissor": "loulou",
+              "dateProposition": "2018-12-08T15:29:18.999Z",
+              "interestRate": 8.2,
+              "dateReject": "2018-12-08T15:29:18.999Z",
+              "dateAgree":"",
+              "state": "reject"
+            },
+            {
+              "idInvestissor": 9,
+              "usernameInvestissor": "lui",
+              "dateProposition": "2018-12-28T15:24:15.511Z",
+              "interestRate": 4.5,
+              "dateReject":"",
+              "dateAgree": "2018-12-29T15:22:08.511Z",
+              "state": "waiting"
+            },
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-12-28T15:24:15.511Z",
+              "interestRate": 2.1,
+              "dateReject":"",
+              "dateAgree": "2018-12-29T15:22:08.511Z",
+              "state": "accept"
+            }
+          ]
+        },
+        {
+          "title":"Achat lamas",
+          "description": "Pour tondre la pelouse écologiquement",
+          "datePost": "2018-09-15T15:29:18.999Z",
+          "sum": 560,
+          "offers": [
+            {
+              "idInvestissor": 6,
+              "usernameInvestissor": "julio99",
+              "dateProposition": "2018-12-25T15:24:15.511Z",
+              "interestRate": 3.6,
+              "dateReject":"",
+              "dateAgree":  "2018-12-25T15:24:15.511Z",
+              "state": "accept"
+            }
+          ]
+        }
+      ],
+      "investment":[
+      ]
+    },
+    {
+      "id": 9,
+      "username": "tuto364",
+      "name": "Tony",
+      "firstname": "Berton",
+      "birthday": "1989-09-22T18:25:43.511Z",
+      "registration": "2018-11-27T18:25:43.511Z",
+      "localisation": "Dijon",
+      "age": 29,
+      "loaning":[
+      ],
+      "investment":[
+        {
+          "idBorrower": 1,
+          "sum": 700,
+          "usernameBorrower": "lilou25",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 4.5,
+          "state": "accept"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "username": "julie958",
+      "name": "Juliette",
+      "firstname": "Rosie",
+      "birthday": "1991-10-12T18:25:43.511Z",
+      "registration": "2018-11-07T18:25:43.511Z",
+      "localisation": "Ivry-Sur-Seine",
+      "age": 37,
+      "loaning":[
+        {
+          "title":"Restaurant pour mon anniversaire de mariage",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 300,
+          "offers": []
+        },
+        {
+          "title":"Vétérinaire",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 150,
+          "offers": []
+        }
+      ],
+      "investment":[
+        {
+          "idBorrower": 8,
+          "sum": 125,
+          "usernameBorrower": "mimi55",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 5,
+          "state": "accept"
+        },
+        {
+          "idBorrower": 12,
+          "sum": 125,
+          "usernameBorrower": "filo85",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 4,
+          "state": "waiting"
+        },
+        {
+          "idBorrower": 9,
+          "sum": 125,
+          "usernameBorrower": "tuto364",
+          "dateProposition": "2018-11-05T12:12:11.511Z",
+          "interestRate": 4.8,
+          "state": "accept"
+        }
+      ]
+    }
+  ]
+}

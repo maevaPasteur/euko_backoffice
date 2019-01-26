@@ -1,0 +1,55 @@
+<div class="container both-user-list">
+  <div class="box full">
+    <div class="box-container">
+      <div class="header underline">
+        <h2 class="title light medium">Emprunteurs et prêteurs</h2>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="text bold">Id</th>
+            <th class="text bold">Pseudo</th>
+            <th class="text bold">Age</th>
+            <th class="text bold">Ville</th>
+            <th class="text bold">Argent prêté</th>
+            <th class="text bold">Argent reçu</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <td>
+              <a href="#" class="bg circle small pink">
+                <span class="text bold white ">{{ user.id }}</span>
+              </a>
+            </td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.localisation }}</td>
+            <td>
+              <ul *ngFor="let investment of user.investment">
+                <li>
+                  <span class="text bold">{{ investment.sum }}€</span>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul *ngFor="let loaning of user.loaning">
+                <li>
+                  <span class="text bold">{{ loaning.sum }}€</span>
+                </li>
+              </ul>
+            </td>
+            <td class="action-container">
+              <a href="#"><i class="show icon-search"></i></a>
+              <a href="#"><i class="remove icon-remove"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

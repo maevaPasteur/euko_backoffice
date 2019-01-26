@@ -1,0 +1,53 @@
+<div class="container neutral-list">
+  <div class="box full">
+    <div class="box-container">
+      <div class="header underline">
+        <h2 class="title light medium">Utilisateurs sans activité</h2>
+      </div>
+      <div class="content">
+        <table class="table">
+          <thead>
+          <tr>
+            <th class="text bold">Id</th>
+            <th class="text bold">Pseudo</th>
+            <th class="text bold">Age</th>
+            <th class="text bold">Ville</th>
+            <th class="text bold">Inscriprion</th>
+            <th class="text bold">Dernière connexion</th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <td>
+              <a href="#" class="bg circle small pink">
+                <span class="text bold white ">{{ user.id }}</span>
+              </a>
+            </td>
+            <td>
+              {{ user.username }}ans
+            </td>
+            <td>
+              {{ user.age }}
+            </td>
+            <td>
+              {{ user.localisation }}
+            </td>
+            <td>
+              {{user.registration | date:'M/d/yyyy' }}
+            </td>
+            <td>
+              {{ user.lastCo | date:'M/d/yyyy'  }}
+            </td>
+            <td class="action-container">
+              <a href="#"><i class="show icon-search"></i></a>
+              <a href="#"><i class="remove icon-remove"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

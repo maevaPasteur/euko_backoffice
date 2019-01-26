@@ -1,0 +1,104 @@
+.underline {
+  border-bottom: solid 1px rgba(0,0,0,.1);
+}
+
+.light-underline {
+  border-bottom: solid 1px rgba(0,0,0,.05);
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+}
+
+.graph-line {
+  position: relative;
+  background-color: $light-grey;
+  margin-top: 7px;
+  overflow: hidden;
+
+  &.large {
+    display: block;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 30%;
+
+    &.green {
+      background-color: $green;
+    }
+  }
+}
+
+.btn {
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  border-radius: 3px;
+  margin: 15px auto 0;
+  cursor: pointer;
+
+  &.pink {
+    background-color: $pink;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+
+  &.blue {
+    background-color: $blue;
+  }
+  &.excel {
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+  }
+}
+
+.bg {
+  &.circle {
+    border-radius: 50%;
+
+    &.small {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      line-height: 23px;
+      text-align: center;
+    }
+  }
+  &.light-grey {
+    background-color: $light-grey;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.pink {
+    background-color: $pink;
+  }
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+

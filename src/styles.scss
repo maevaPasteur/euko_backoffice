@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-style: normal;
+}
+
+@import "assets/scss/general/variables";
+@import "assets/scss/general/font";
+@import "assets/scss/general/global";
+@import "assets/scss/general/composant";
+@import "assets/scss/blocks/header";
+@import "assets/scss/blocks/box";
+@import "assets/scss/blocks/table";
