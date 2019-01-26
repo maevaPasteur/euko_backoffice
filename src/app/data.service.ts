@@ -38,7 +38,7 @@ export class DataService {
     }
   }
 
-  exportExcel2() {
+  exportExcel() {
       $('#btnExport').click(function (e) {
           const postfix = $(this).data('name');
           const a = document.createElement('a');

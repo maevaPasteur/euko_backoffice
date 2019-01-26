@@ -4,20 +4,19 @@
       <div class="header underline">
         <h2 class="title light medium">Emprunteurs</h2>
       </div>
-      <div class="content">
+      <div class="content" id="dvData">
         <table class="table">
           <thead>
           <tr>
             <th class="text bold">Id</th>
             <th class="text bold">Pseudo</th>
+            <th class="text bold">Age</th>
+            <th class="text bold">Demande</th>
             <th class="text bold">Refusées</th>
-            <th class="text bold">Qtt</th>
             <th class="text bold">%</th>
             <th class="text bold">En attentes</th>
-            <th class="text bold">Qtt</th>
             <th class="text bold">%</th>
             <th class="text bold">Empruntées</th>
-            <th class="text bold">Qtt</th>
             <th class="text bold">%</th>
           </tr>
           </thead>
@@ -29,65 +28,51 @@
               </a>
             </td>
             <td>
-              {{ user.username }}ans
+              {{ user.username }}
             </td>
             <td>
-              {{ user.age }}
+              {{ user.age }}ans
             </td>
             <td>
-              <ul *ngFor="let loan of user.loaning">
-                <li>{{loan.sum}}€</li>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'all', 'sum') }}
+              </span>
             </td>
             <td>
-              <ul *ngFor="let loan of user.loaning">
-                <ul *ngFor="let offer of loan.offers">
-                  <li class="mb5" *ngIf="offer.state === 'reject'">
-                    <a href="#" class="bg circle small blue">
-                      <span class="text bold white ">{{offer.idInvestissor}}</span>
-                    </a>
-                    à
-                    <span class="text bold">
-                      {{offer.interestRate}}%
-                    </span>
-                  </li>
-                </ul>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'reject', 'number') }}
+              </span>
             </td>
             <td>
-              <ul *ngFor="let loan of user.loaning">
-                <ul *ngFor="let offer of loan.offers">
-                  <li class="mb5" *ngIf="offer.state === 'waiting'">
-                    <a href="#" class="bg circle small blue">
-                      <span class="text bold white ">{{offer.idInvestissor}}</span>
-                    </a>
-                    à
-                    <span class="text bold">
-                      {{offer.interestRate}}%
-                    </span>
-                  </li>
-                </ul>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'reject', 'rate') }}
+              </span>
             </td>
             <td>
-              <ul *ngFor="let loan of user.loaning">
-                <ul *ngFor="let offer of loan.offers">
-                  <li class="mb5" *ngIf="offer.state === 'accept'">
-                    <a href="#" class="bg circle small blue">
-                      <span class="text bold white ">{{offer.idInvestissor}}</span>
-                    </a>
-                    à
-                    <span class="text bold">
-                      {{offer.interestRate}}%
-                    </span>
-                  </li>
-                </ul>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'waiting', 'number') }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'waiting', 'rate') }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'accept', 'number') }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'accept', 'rate') }}
+              </span>
             </td>
           </tr>
           </tbody>
         </table>
       </div>
+      <p id="btnExport" data-name="emprunteurs" class="btn blue excel mb20"><span class="text bold white">Exporter format Excel</span></p>
     </div>
   </div>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import {Chart} from 'chart.js';
-import Chart = require('chart');
 
 @Component({
   selector: 'app-user',

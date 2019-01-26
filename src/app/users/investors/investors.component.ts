@@ -24,7 +24,7 @@ export class InvestorsComponent implements OnInit {
       }
     );
 
-    this.data.exportExcel2();
+    this.data.exportExcel();
 
     this.getSum = function (investment: any, type: any, ask: any ) {
       let sum = 0;
