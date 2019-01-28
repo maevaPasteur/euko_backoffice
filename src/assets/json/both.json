@@ -75,7 +75,7 @@
               "interestRate": 4.9,
               "dateReject":"",
               "dateAgree": "2018-12-29T15:22:08.511Z",
-              "state": "accept"
+              "state": "waiting"
             }
           ]
         }
@@ -138,7 +138,7 @@
               "interestRate": 12,
               "dateReject":"",
               "dateAgree": "",
-              "state": "reject"
+              "state": "accept"
             }
           ]
         }
@@ -149,8 +149,8 @@
           "sum": 450,
           "usernameBorrower": "julio563",
           "dateProposition": "2018-02-20T12:12:11.511Z",
-          "interestRate": 14,
-          "state": "reject"
+          "interestRate": 1.6,
+          "state": "accept"
         }
       ]
     },
@@ -168,8 +168,18 @@
           "title":"Car repair",
           "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
           "datePost": "2018-11-05T12:21:12.511Z",
-          "sum": 700,
-          "offers": []
+          "sum": 210,
+          "offers": [
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 4.2,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "accept"
+            }
+          ]
         }
       ],
       "investment":[
@@ -226,8 +236,16 @@
           "sum": 582,
           "usernameBorrower": "riri39",
           "dateProposition": "2018-16-28T12:12:11.511Z",
-          "interestRate": 12,
-          "state": "reject"
+          "interestRate": 6.2,
+          "state": "accept"
+        },
+        {
+          "idBorrower": 2,
+          "sum": 662,
+          "usernameBorrower": "riri39",
+          "dateProposition": "2018-16-28T12:12:11.511Z",
+          "interestRate": 5,
+          "state": "accept"
         }
       ]
     },
@@ -280,7 +298,7 @@
           "title":"Achat lamas",
           "description": "Pour tondre la pelouse écologiquement",
           "datePost": "2018-09-15T15:29:18.999Z",
-          "sum": 560,
+          "sum": 320,
           "offers": [
             {
               "idInvestissor": 6,
@@ -289,12 +307,36 @@
               "interestRate": 3.6,
               "dateReject":"",
               "dateAgree":  "2018-12-25T15:24:15.511Z",
-              "state": "accept"
+              "state": "waiting"
             }
           ]
         }
       ],
       "investment":[
+        {
+          "idBorrower": 1,
+          "sum": 700,
+          "usernameBorrower": "lilou25",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 4.9,
+          "state": "accept"
+        },
+        {
+          "idBorrower": 1,
+          "sum": 399,
+          "usernameBorrower": "lilou25",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 5.9,
+          "state": "accept"
+        },
+        {
+          "idBorrower": 1,
+          "sum": 400,
+          "usernameBorrower": "lilou25",
+          "dateProposition": "2018-11-28T12:12:11.511Z",
+          "interestRate": 4.7,
+          "state": "accept"
+        }
       ]
     },
     {
@@ -307,6 +349,23 @@
       "localisation": "Dijon",
       "age": 29,
       "loaning":[
+        {
+          "title":"Car repair",
+          "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
+          "datePost": "2018-11-05T12:21:12.511Z",
+          "sum": 599,
+          "offers": [
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 3.6,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "accept"
+            }
+          ]
+        }
       ],
       "investment":[
         {
@@ -333,15 +392,35 @@
           "title":"Restaurant pour mon anniversaire de mariage",
           "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
           "datePost": "2018-11-05T12:21:12.511Z",
-          "sum": 300,
-          "offers": []
+          "sum": 480,
+          "offers": [
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 3.6,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "accept"
+            }
+          ]
         },
         {
           "title":"Vétérinaire",
           "description": "Hello, I need to repair my car for working. It's really important ! Thank you so much.",
           "datePost": "2018-11-05T12:21:12.511Z",
-          "sum": 150,
-          "offers": []
+          "sum": 330,
+          "offers": [
+            {
+              "idInvestissor": 3,
+              "usernameInvestissor": "riri39",
+              "dateProposition": "2018-11-28T15:24:15.511Z",
+              "interestRate": 3.8,
+              "dateReject":"",
+              "dateAgree": "",
+              "state": "reject"
+            }
+          ]
         }
       ],
       "investment":[

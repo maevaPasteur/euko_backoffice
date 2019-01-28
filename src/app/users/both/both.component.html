@@ -4,7 +4,7 @@
       <div class="header underline">
         <h2 class="title light medium">Emprunteurs et prêteurs</h2>
       </div>
-      <div class="content">
+      <div class="content" id="dvData">
         <table class="table">
           <thead>
           <tr>
@@ -12,9 +12,11 @@
             <th class="text bold">Pseudo</th>
             <th class="text bold">Age</th>
             <th class="text bold">Ville</th>
-            <th class="text bold">Argent prêté</th>
-            <th class="text bold">Argent reçu</th>
-            <th></th>
+            <th class="text bold">Prêté</th>
+            <th class="text bold">%</th>
+            <th class="text bold">Demandé</th>
+            <th class="text bold">Emprunté</th>
+            <th class="text bold">%</th>
           </tr>
           </thead>
           <tbody>
@@ -28,27 +30,35 @@
             <td>{{ user.age }}</td>
             <td>{{ user.localisation }}</td>
             <td>
-              <ul *ngFor="let investment of user.investment">
-                <li>
-                  <span class="text bold">{{ investment.sum }}€</span>
-                </li>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.investment, 'accept', 'sum') }}
+              </span>
             </td>
             <td>
-              <ul *ngFor="let loaning of user.loaning">
-                <li>
-                  <span class="text bold">{{ loaning.sum }}€</span>
-                </li>
-              </ul>
+              <span class="text bold">
+                    {{ getSum(user.investment, 'accept', 'rate') }}
+              </span>
             </td>
-            <td class="action-container">
-              <a href="#"><i class="show icon-search"></i></a>
-              <a href="#"><i class="remove icon-remove"></i></a>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'ask', 'sum') }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'accept', 'sum') }}
+              </span>
+            </td>
+            <td>
+              <span class="text bold">
+                    {{ getSum(user.loaning, 'accept', 'rate') }}
+              </span>
             </td>
           </tr>
           </tbody>
         </table>
       </div>
+      <p id="btnExport" data-name="investisseurs" class="btn blue excel mb20"><span class="text bold white">Exporter format Excel</span></p>
     </div>
   </div>
 </div>
