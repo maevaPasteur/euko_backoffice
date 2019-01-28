@@ -16,6 +16,7 @@ import { NeutralComponent } from './users/neutral/neutral.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { ProjectToValidComponent } from './projects/project-to-valid/project-to-valid.component';
+import { ProjectKanbanComponent } from './projects/project-kanban/project-kanban.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ProjectToValidComponent } from './projects/project-to-valid/project-to-
     ProjectComponent,
     ProjectListComponent,
     ProjectToValidComponent,
+    ProjectKanbanComponent,
   ],
   imports: [
     BrowserModule,

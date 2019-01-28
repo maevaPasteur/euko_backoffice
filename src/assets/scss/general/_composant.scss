@@ -33,33 +33,6 @@
   }
 }
 
-.btn {
-  padding: 0 15px;
-  height: 30px;
-  line-height: 30px;
-  display: block;
-  border-radius: 3px;
-  margin: 15px auto 0;
-  cursor: pointer;
-
-  &.pink {
-    background-color: $pink;
-  }
-
-  &.green {
-    background-color: $green;
-  }
-
-  &.blue {
-    background-color: $blue;
-  }
-  &.excel {
-    width: 100%;
-    max-width: 150px;
-    text-align: center;
-  }
-}
-
 .bg {
   &.circle {
     border-radius: 50%;
@@ -102,3 +75,10 @@
   margin-right: 10px;
 }
 
+.change-view {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 20px;
+}

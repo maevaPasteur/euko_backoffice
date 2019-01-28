@@ -10,6 +10,7 @@ import { NeutralComponent } from './users/neutral/neutral.component';
 import { BothComponent  } from './users/both/both.component';
 import { ProjectComponent  } from './projects/project/project.component';
 import { ProjectListComponent  } from './projects/project-list/project-list.component';
+import { ProjectKanbanComponent } from './projects/project-kanban/project-kanban.component';
 import { ProjectToValidComponent  } from './projects/project-to-valid/project-to-valid.component';
 
 const routes: Routes = [
@@ -20,9 +21,10 @@ const routes: Routes = [
   { path: 'utilisateurs/investisseurs', component: InvestorsComponent },
   { path: 'utilisateurs/innactifs', component: NeutralComponent },
   { path: 'utilisateurs/mixtes', component: BothComponent },
-  { path: 'project', component: ProjectComponent },
-  { path: 'project/tous', component: ProjectListComponent },
-  { path: 'project/a-valider', component: ProjectToValidComponent },
+  { path: 'projet', component: ProjectComponent },
+  { path: 'projet/liste', component: ProjectListComponent },
+  { path: 'projet/a-valider', component: ProjectToValidComponent },
+  { path: 'projet/kanban', component: ProjectKanbanComponent },
 ];
 
 @NgModule({

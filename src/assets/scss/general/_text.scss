@@ -1,0 +1,41 @@
+.title, .text {
+  &.bold {
+    font-weight: 500;
+  }
+  &.light {
+    font-weight: 100
+  }
+  &.blue {
+    color: $blue;
+  }
+  &.green {
+    color: $green;
+  }
+  &.pink {
+    color: $pink;
+  }
+  &.white {
+    color: #ffffff;
+  }
+  &.dark {
+    color: $dark-grey;
+  }
+  &.light-grey{
+    color: $light-grey;
+  }
+}
+
+.title {
+  font-family: $font-title;
+
+  &.big {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  &.medium {
+    font-size: 25px;
+  }
+  &.small {
+    font-size: 20px;
+  }
+}
