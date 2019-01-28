@@ -20,22 +20,67 @@
   &.dark {
     color: $dark-grey;
   }
+  &.black {
+    color: $black;
+  }
   &.light-grey{
     color: $light-grey;
   }
-}
-
-.title {
-  font-family: $font-title;
-
   &.big {
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.44px;
   }
   &.medium {
-    font-size: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.73px;
   }
   &.small {
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: 0.73px;
+  }
+  &.very-small {
+    font-size: 14px;
+    letter-spacing: 0.64px;
+    color: $dark-grey;
+    font-weight: 500;
+  }
+
+  &.condensed {
+    font-family: $font-condensed;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    font-size: 14px;
+    color: $dark-grey;
+  }
+  &.up {
+    text-transform: uppercase;
+    font-weight: 200;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.big-underline {
+    padding-bottom: 10px;
+    position: relative;
+    display: inline-block;
+
+    &:before {
+      content: '';
+      width: 120px;
+      height: 7px;
+      bottom: 0;
+      left: -40px;
+      display: block;
+      position: absolute;
+    }
+
+    &.line-green:before {
+      background-color: $green;
+    }
+    &.line-pink:before {
+      background-color: $pink;
+    }
   }
 }

@@ -9,9 +9,12 @@
 @import "assets/scss/general/variables";
 @import "assets/scss/general/font";
 @import "assets/scss/general/global";
+@import "assets/scss/general/background";
 @import "assets/scss/general/text";
-@import "assets/scss/general/button";
-@import "assets/scss/general/composant";
+@import "assets/scss/element/button";
+@import "assets/scss/general/margin";
+@import "assets/scss/element/input";
+@import "assets/scss/element/box";
 @import "assets/scss/blocks/header";
-@import "assets/scss/blocks/box";
 @import "assets/scss/blocks/table";
+@import "assets/scss/blocks/graphic";

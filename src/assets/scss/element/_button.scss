@@ -1,0 +1,37 @@
+.btn {
+  padding: 0 15px;
+  display: block;
+  margin: 15px auto 0;
+  cursor: pointer;
+  width: auto;
+  max-width: 200px;
+  text-align: center;
+  height: 40px;
+  border-radius: 100px;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.73px;
+
+  &.pink {
+    background-color: $pink;
+  }
+
+  &.green {
+    background-color: $green;
+    font-weight: 400;
+    color: $black;
+  }
+
+  &.blue {
+    background-color: $blue;
+    color: white;
+  }
+  &.excel {
+    text-align: center;
+  }
+  &.center {
+    text-align: center;
+  }
+}
+

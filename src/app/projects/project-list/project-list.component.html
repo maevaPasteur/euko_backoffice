@@ -28,16 +28,16 @@
           <tbody>
           <tr *ngFor="let project of projects">
             <td>
-              <a href="#" class="bg circle small pink">
-                <span class="text bold white ">{{ project.id }}</span>
+              <a href="#" class="bg circle small green">
+                <span class="text bold black ">{{ project.id }}</span>
               </a>
             </td>
             <td>{{ project.title }}</td>
             <td>{{ project.price }}€</td>
             <td>{{ project.description }}</td>
-            <td>{{ project.interests }}%</td>
+            <td>{{ project.interests }}</td>
             <td>{{ project.timeLaps }}mois</td>
-            <td>{{ project.createdAr }}</td>
+            <td>{{ project.createdAt | date:'dd/mm/yyyy' }}</td>
           </tr>
           </tbody>
         </table>
