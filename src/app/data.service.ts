@@ -38,6 +38,10 @@ export class DataService {
     }
   }
 
+    getWireframe() {
+        return this.http.get('../assets/json/screen_app.json');
+    }
+
   exportExcel() {
       $('#btnExport').click(function (e) {
           const postfix = $(this).data('name');

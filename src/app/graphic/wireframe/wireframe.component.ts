@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as $ from 'jquery';
+import {DataService} from '../../data.service';
+
 @Component({
   selector: 'app-wireframe',
   templateUrl: './wireframe.component.html',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WireframeComponent implements OnInit {
 
-  constructor() { }
+  wireframes: any;
+  images: any;
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+      this.data.getWireframe().subscribe(res => {
+              this.wireframes = res;
+              this.images = this.wireframes.images;
+              console.log(this.images);
+          }
+      );
   }
 
 }

@@ -1,8 +1,8 @@
 {
   "images": [
     {
-      "url": "Dashboard _vos _emprunts _Copy _2",
-      "name": "Dashboard vos emprunts",
+      "url": "Dashboard_vos _emprunts.png",
+      "name": "Vos financements",
       "date": "2019-01-28T15:29:18.999Z",
       "version": "1"
     },
@@ -19,12 +19,6 @@
       "version": "1"
     },
     {
-      "url": "Inscription_Copy.png",
-      "name": "Inscription",
-      "date": "2019-01-28T15:29:18.999Z",
-      "version": "1"
-    },
-    {
       "url": "Liste_des_projets.png",
       "name": "Liste des projets",
       "date": "2019-01-28T15:29:18.999Z",
@@ -32,7 +26,7 @@
     },
     {
       "url": "Liste_des_projets_Connecte.png",
-      "name": "Liste des projets connectés",
+      "name": "Liste des projets",
       "date": "2019-01-28T15:29:18.999Z",
       "version": "1"
     },
@@ -49,8 +43,26 @@
       "version": "1"
     },
     {
-      "url": "Paiement_Copy.png",
-      "name": "Paiement",
+      "url": "emprunts_en_cours.png",
+      "name": "Emprunts en cours",
+      "date": "2019-01-28T15:29:18.999Z",
+      "version": "1"
+    },
+    {
+      "url": "valider_projet.png",
+      "name": "Valider un projet",
+      "date": "2019-01-28T15:29:18.999Z",
+      "version": "1"
+    },
+    {
+      "url": "publiez_projet.png",
+      "name": "Publiez vos projets",
+      "date": "2019-01-28T15:29:18.999Z",
+      "version": "1"
+    },
+    {
+      "url": "votre_emprunt.png",
+      "name": "Votre emprunt en cours",
       "date": "2019-01-28T15:29:18.999Z",
       "version": "1"
     }
