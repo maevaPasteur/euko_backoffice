@@ -1,4 +1,11 @@
 <div class="container charte-graphique">
+    <div class="box full">
+        <div class="box-container">
+            <div class="header">
+                <h2 class="title light big">Charte graphique</h2>
+            </div>
+        </div>
+    </div>
   <div class="box small">
     <div class="box-container">
       <div class="header underline">
@@ -89,19 +96,27 @@
             </div>
             <div class="content">
                 <h3 class="title medium dark">Somme demandée</h3>
-                <p class="text condensed up mt10 mb20 center">380 euros</p>
-                <div class="select-cursor">
-                    <span class="line full bg blue"></span>
-                    <span class="line empty bg light-blue"></span>
-                    <span class="cursor-circle bg circle blue"></span>
-                </div>
-                <h3 class="title medium dark mt80">Echéance de remboursement</h3>
-                <p class="text condensed up mt10 mb20 center">6 mois</p>
-                <div class="select-cursor mb30">
-                    <span class="line full bg blue"></span>
-                    <span class="line empty bg light-blue"></span>
-                    <span class="cursor-circle bg circle blue"></span>
-                </div>
+                <p class="text condensed up mt10 center"><span class="text sumAsk">375</span>€</p>
+                <form>
+                    <div class="range-slider">
+                        <label>
+                            <input class="range-slider__range sumAsk" type="range" value="375" min="0" max="750">
+                        </label>
+                        <span class="line-input"></span>
+                    </div>
+                </form>
+
+                <h3 class="title medium dark mt40">Echéance de remboursement</h3>
+                <p class="text condensed up mt10 center"><span class="text timeAsk">6</span>mois</p>
+                <form>
+                    <div class="range-slider">
+                        <label>
+                            <input class="range-slider__range timeAsk" type="range" value="6" min="1" max="12">
+                        </label>
+                        <span class="line-input"></span>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
