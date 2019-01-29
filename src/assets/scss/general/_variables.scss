@@ -16,6 +16,9 @@ $dark-grey: rgb(108,108,108);
 $medium-grey: #cbcbcb;
 $black: #2d2d2d;
 
+$gradient-pink : linear-gradient(to bottom, #ffffff 0%,#ffccc0 99%);
+$gradient-blue : linear-gradient(135deg, #667efd 0%,#3b54d5 99%);
+
 @mixin transform($property) {
   -webkit-transform: $property;
   -ms-transform: $property;

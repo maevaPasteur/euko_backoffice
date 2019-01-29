@@ -46,3 +46,8 @@
   transform: translateY(-50%);
   font-size: 20px;
 }
+
+.box-blue {
+  border: solid 1px $blue;
+  box-shadow: 0 5px 26px 0 rgba(0,0,0,0.2);
+}

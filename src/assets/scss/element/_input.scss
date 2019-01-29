@@ -96,6 +96,7 @@
 .text.check {
   position: relative;
   margin-bottom: 10px;
+  cursor: pointer;
 
   &:before {
     content: '';
