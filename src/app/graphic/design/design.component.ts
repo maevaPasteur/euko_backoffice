@@ -28,6 +28,8 @@ export class DesignComponent implements OnInit {
           let left = e.val() * (e.width() / valueMax);
           e.closest('.range-slider').find('.line-input').css('left', left);
       }
+
+      // var ps = new PerfectScrollbar('.container');
   }
 
 }

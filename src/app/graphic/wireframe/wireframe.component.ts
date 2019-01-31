@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
 import {DataService} from '../../data.service';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 @Component({
   selector: 'app-wireframe',
@@ -22,6 +23,12 @@ export class WireframeComponent implements OnInit {
               console.log(this.images);
           }
       );
+
+      const ps = new PerfectScrollbar('.container', {
+          wheelSpeed: 2,
+          wheelPropagation: true,
+          minScrollbarLength: 20
+      });
   }
 
 }
