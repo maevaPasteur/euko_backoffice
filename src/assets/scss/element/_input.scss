@@ -1,3 +1,13 @@
+input,
+textarea,
+input:focus,
+textarea:focus {
+  border: 0;
+  outline: none;
+  box-shadow: 0 0 0 0;
+  font-family: $font-text;
+}
+
 .graph-line {
   position: relative;
   background-color: $light-grey;

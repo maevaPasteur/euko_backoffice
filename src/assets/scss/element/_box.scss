@@ -28,7 +28,7 @@
     padding: 20px 15px;
 
     &.flex {
-      display: flex;
+      @include flex;
 
       .child {
         &.col2{

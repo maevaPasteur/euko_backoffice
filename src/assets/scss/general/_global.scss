@@ -10,7 +10,7 @@ body {
 }
 
 .container  {
-  display: flex;
+  @include flex;
   align-content: flex-start;
   flex-wrap: wrap;
   width: calc(100% - 10px);

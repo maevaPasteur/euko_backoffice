@@ -5,7 +5,7 @@
   }
 
   .color-container {
-    display: flex;
+    @include flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
