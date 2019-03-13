@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
-import {DataService} from '../../data.service';
-import {ExportService} from '../../export.service';
+import {DataService} from '../../services/data/data.service';
+import {ExportService} from '../../services/export/export.service';
 
 @Component({
     selector: 'app-borrowers',

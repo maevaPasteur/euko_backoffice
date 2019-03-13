@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { element } from 'protractor';
-import { BootService } from '../boot.service';
+import { BootService } from '../services/bot/boot.service';
 
 
 export interface Message {
