@@ -27,6 +27,10 @@ export class HomeComponent implements OnInit {
         this.initBoot();
     }
 
+    /**
+     * Initialize the chatbot
+     * Made with Dialogflow
+     */
     initBoot() {
         this.resultados = [];
         this.chatBoot.getResponse('oi')
@@ -37,6 +41,9 @@ export class HomeComponent implements OnInit {
             });
     }
 
+    /**
+     * Send a message to the chatbot via Dialogflow
+     */
     sendMessage() {
         this.resultados.push({ remetente: 'eu', mensagem: this.msg, data: new Date() });
         this.chatBoot.getResponse(this.removerAcentos(this.msg))
@@ -49,16 +56,27 @@ export class HomeComponent implements OnInit {
         this.msg = '';
     }
 
+    /**
+     * Scroll the chatbot after the bot answer
+     */
     ngAfterViewChecked() {
         this.scrollToBottom();
     }
 
+    /**
+     * Scroll to the end of the chatbot container
+     */
     scrollToBottom(): void {
         try {
             this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
         } catch (err) { }
     }
 
+    /**
+     * Removes all accents
+     * @param s The string to  change
+     * @return Transformed string
+     */
     private removerAcentos(s) {
         return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
