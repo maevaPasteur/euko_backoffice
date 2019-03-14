@@ -6,17 +6,20 @@
             </div>
             <div class="content">
                 <ul #scrollMe class="messages">
-                    <div *ngFor="let msg of resultados; let i = index ">
-                        <li class="message appeared" [ngClass]="{'left':msg.remetente === 'boot',
+                    <div>
+                        <div *ngFor="let msg of resultados; let i = index ">
+                            <li class="message appeared" [ngClass]="{'left':msg.remetente === 'boot',
                         'right':msg.remetente === 'eu'     }">
-                            <div *ngIf="msg.remetente === 'boot'" class="avatar"></div>
-                            <div class="text">
-                                <p *ngIf="i > 0" class="time"> {{msg.data | date:'HH:mm:ss'}}</p>
-                                <p *ngIf="i > 0" class="msg">{{msg.mensagem}}</p>
-                                <p *ngIf="i == 0" class="msg">Bonjour ! Comment puis-je vous aider ?</p>
-                            </div>
-                        </li>
+                                <div *ngIf="msg.remetente === 'boot'" class="avatar"></div>
+                                <div class="text">
+                                    <p *ngIf="i > 0" class="time"> {{msg.data | date:'HH:mm:ss'}}</p>
+                                    <p *ngIf="i > 0" class="msg">{{msg.mensagem}}</p>
+                                    <p *ngIf="i == 0" class="msg">Bonjour ! Comment puis-je vous aider ?</p>
+                                </div>
+                            </li>
+                        </div>
                     </div>
+
                 </ul>
                 <div class="send-msg">
                     <div class="text">

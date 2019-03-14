@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { element } from 'protractor';
 import { BootService } from '../services/bot/boot.service';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 
 export interface Message {
@@ -16,15 +17,23 @@ export interface Message {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    ngOnInit(): void {
+
+    constructor(private chatBoot: BootService) {
+        this.initBoot();
     }
+
+    ps: any;
 
     @ViewChild('scrollMe') private myScrollContainer: ElementRef;
     msg: string;
     resultados: Message[];
 
-    constructor(private chatBoot: BootService) {
-        this.initBoot();
+    ngOnInit(): void {
+        this.ps = new PerfectScrollbar('.messages', {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
     }
 
     /**
@@ -54,21 +63,19 @@ export class HomeComponent implements OnInit {
             });
 
         this.msg = '';
-    }
-
-    /**
-     * Scroll the chatbot after the bot answer
-     */
-    ngAfterViewChecked() {
         this.scrollToBottom();
     }
 
     /**
      * Scroll to the end of the chatbot container
+     * Event when bot give his answer
      */
-    scrollToBottom(): void {
+    scrollToBottom() {
         try {
-            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+            setTimeout( () => {
+                this.ps.update();
+                document.querySelector('.messages').scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+            }, 300);
         } catch (err) { }
     }
 

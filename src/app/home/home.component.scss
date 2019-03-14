@@ -4,6 +4,12 @@
       background-color: transparent;
       box-shadow: none;
 
+      .messages {
+        position: relative;
+        max-height: calc(100vh - 200px);
+        overflow: hidden;
+      }
+
       .avatar {
         display: inline-block;
         width: 40px;
