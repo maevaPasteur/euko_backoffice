@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { element } from 'protractor';
 import { BootService } from '../services/bot/boot.service';
 import PerfectScrollbar from 'perfect-scrollbar';
@@ -75,7 +74,7 @@ export class HomeComponent implements OnInit {
             setTimeout( () => {
                 this.ps.update();
                 document.querySelector('.messages').scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-            }, 300);
+            }, 800);
         } catch (err) { }
     }
 

@@ -11,6 +11,10 @@ export class BootService {
 
     constructor(private http: HttpClient) { }
 
+    /**
+     * @param {string} query
+     * @return {Observable<Object>}
+     */
     public getResponse(query: string) {
         let data = {
             query: query,

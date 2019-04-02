@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as $ from 'jquery';
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -10,18 +8,20 @@ import * as $ from 'jquery';
 export class NavComponent implements OnInit {
 
   title = 'Euko';
+  links: any;
 
   constructor() { }
 
   ngOnInit() {
+    this.links = document.querySelectorAll('nav a');
+  }
 
-    const navLine: any = $('.nav .line');
-    const navLink = $('.nav a');
-
-    navLink.click( function () {
-      navLink.removeClass('active');
-      $(this).addClass('active');
-    });
+  activeLinks(event) {
+    console.log(this.links);
+    for (let i = 0, y = this.links.length; i < y; i++) {
+        this.links[i].classList.remove('active');
+    }
+    event.srcElement.classList.add('active');
   }
 
 }
