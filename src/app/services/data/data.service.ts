@@ -24,7 +24,7 @@ export class DataService {
                 return this.http.get('../assets/json/neutrals.json');
                 break;
             default :
-                return this.http.get('../assets/json/users.json');
+                return this.http.get('../assets/json/admin/users.json');
         }
     }
 

@@ -46,7 +46,7 @@ export class UserComponent implements OnInit {
                                 lineTension: 0.5,
                                 borderColor: '#fedcdc',
                                 borderWidth: 2,
-                                backgroundColor: '#e7ebee',
+                                backgroundColor: 'linear-gradient(#ffffff, #9198e5)',
                                 pointBackgroundColor: '#fedcdc',
                             }]
                         },

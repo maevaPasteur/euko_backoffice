@@ -8,8 +8,7 @@
         <table class="table">
           <thead>
           <tr>
-            <th class="text bold">Id</th>
-            <th class="text bold">Pseudo</th>
+            <th class="text bold">Prénom</th>
             <th class="text bold">Age</th>
             <th class="text bold">Ville</th>
             <th class="text bold">Statut</th>
@@ -20,32 +19,12 @@
           </thead>
           <tbody>
           <tr *ngFor="let user of users">
-            <td>
-              <a href="#" class="bg circle small green">
-                <span class="text bold black ">{{ user.id }}</span>
-              </a>
-            </td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.age }}</td>
-            <td>{{ user.localisation }}</td>
-            <td *ngIf="(user.investment.length == 0) && (user.loaning.length == 0)">Neutre</td>
-            <td *ngIf="(user.investment.length > 0) && (user.loaning.length == 0)">Investisseur</td>
-            <td *ngIf="(user.investment.length == 0) && (user.loaning.length > 0)">Emprunteur</td>
-            <td *ngIf="(user.investment.length > 0) && (user.loaning.length > 0)">Mix</td>
-            <td>
-              <span class="text bold">
-                {{ getSum(user.investment) }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                {{ getSum(user.loaning) }}
-              </span>
-            </td>
-            <td class="action-container">
-              <a href="#"><i class="show icon-search"></i></a>
-              <a href="#"><i class="remove icon-remove"></i></a>
-            </td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.birthdate | date:'dd/mm/yyyy' | age }}</td>
+            <td>{{ user.city }}</td>
+            <td>{{user | function }}</td>
+            <td><span class="text-bold">{{user | sum: 'offers':'accepted'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'accepted'}}</span></td>
           </tr>
           </tbody>
         </table>
