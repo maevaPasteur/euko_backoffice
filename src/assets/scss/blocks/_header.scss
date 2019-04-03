@@ -1,54 +1,66 @@
 header {
-
   .top {
-    background-color: white;
+    background-color: $light-grey;
     height: 45px;
     line-height: 45px;
     padding: 0 15px;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
     position: fixed;
-    width: 100%;
+    width: calc(100% - 200px);
+    left: 200px;
     top: 0;
   }
 }
 
 .container-nav {
-  background-color: $blue;
+  background-color: #555555;
   position: fixed;
   left: 0;
-  top: 45px;
-  height: calc(100% - 45px);
+  top: 0;
+  height: 100%;
   width: $width-menu;
   color: white;
 
   a {
+    font-size: 16px;
+    font-weight: 500;
     color: white;
   }
 
-  .nav {
-    margin: 20px 0 20px 10px;
+  h1 a {
+    font-size: 30px;
+  }
 
+  h3 a,
+  h2 a {
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  li > a {
+    margin-left: 20px;
+  }
+
+  .nav {
+    margin: 45px 0 20px 10px;
     ul {
       position: absolute;
     }
+  }
 
-    li {
-      a {
-        padding: 0 15px 0 10px;
-        margin: 5px 0;
-        display: block;
-        height: 100%;
-        width: 100%;
-        transition: margin-left ease-out .2s, color ease-out .2s;
-
-        &:hover {
-          margin-left: 10px;
-        }
-
-        //&.active {
-        //  color: #aaaaaa;
-        //}
-      }
-    }
+  i:before {
+    font-size: 14px;
+    margin-right: 5px;
+    transform: translateY(-1px);
+  }
+  .icon-user {
+    color: rgba(255, 204, 191, 0.5)
+  }
+  .icon-money {
+    color: rgba(151, 253, 165, 0.5);
+  }
+  .icon-param {
+    color: rgba(253, 237, 151, 0.5)
   }
 }

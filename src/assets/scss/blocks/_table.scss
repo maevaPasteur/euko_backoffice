@@ -1,18 +1,11 @@
 .table {
   width: 100%;
   text-align: center;
+  border-spacing: 0;
 
   td, th {
     padding: 10px 0;
     vertical-align: top;
-  }
-
-  thead {
-    background-color: $light-blue;
-
-    th {
-      border-bottom: solid 2px $blue;
-    }
   }
 
   tbody {

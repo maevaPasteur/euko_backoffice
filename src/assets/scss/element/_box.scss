@@ -10,26 +10,47 @@
     width: 100%;
   }
 
+  &.small,
+  &.medium {
+    .content {
+      height: calc(100% - 68px);
+      justify-content: center;
+      display: flex;
+      &:not(.row) {
+        flex-direction: column;
+      }
+    }
+  }
   .header {
     padding: 10px 15px;
     display: block;
     position: relative;
+    background-color: rgba(0,0,0,.03);
+
+    .title {
+      font-size: 14px;
+      letter-spacing: .2px;
+      font-weight: 600;
+      color: rgba(0,0,0,.6);
+      text-transform: uppercase;
+    }
   }
 
   .box-container {
     background-color: white;
     border-radius: 3px;
     margin: 5px;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,.1);
-    height: calc( 100% - 10px);
+    //height: calc( 100% - 10px);
+    &:not(.no-border) {
+      border: solid 2px $light-grey;
+    }
   }
 
   .content {
     padding: 20px 15px;
 
-    &.flex {
-      @include flex;
-
+    &.row {
+      align-items: center;
       .child {
         &.col2{
           width: 50%;
@@ -50,4 +71,27 @@
 .box-blue {
   border: solid 1px $blue;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.number {
+  &.less:after,
+  &.more:after {
+    font-family: $fontello;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+  }
+  &.less:after {
+    content: '\E80F';
+    color: red;
+  }
+  &.more:after {
+    content: '\E810';
+    color: $green;
+  }
+}
+#dvData {
+  padding: 0;
 }

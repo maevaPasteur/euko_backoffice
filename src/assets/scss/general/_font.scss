@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600');
-
 @font-face {
   font-family: 'fontello';
-  src: url('assets/fonts/fontello/fontello.eot');
   src: url('assets/fonts/fontello/fontello.eot') format('embedded-opentype'),
   url('assets/fonts/fontello/fontello.woff2') format('woff2'),
   url('assets/fonts/fontello/fontello.woff') format('woff'),
@@ -89,4 +85,19 @@
 }
 .icon-list:before {
   content:'\F0C9';
+}
+.icon-param:before {
+  content: '\e813';
+}
+.icon-eye:before {
+  content: '\e814';
+}
+.icon-pen:before {
+  content: '\e815';
+}
+.icon-user:before {
+  content: '\e812';
+}
+.icon-money:before {
+  content: '\e811';
 }

@@ -21,8 +21,6 @@ import {ProjectComponent} from './projects/project/project.component';
 import {ProjectListComponent} from './projects/project-list/project-list.component';
 import {ProjectToValidComponent} from './projects/project-to-valid/project-to-valid.component';
 import {ProjectKanbanComponent} from './projects/project-kanban/project-kanban.component';
-import {DesignComponent} from './graphic/design/design.component';
-import {WireframeComponent} from './graphic/wireframe/wireframe.component';
 
 @NgModule({
     declarations: [
@@ -39,8 +37,6 @@ import {WireframeComponent} from './graphic/wireframe/wireframe.component';
         ProjectListComponent,
         ProjectToValidComponent,
         ProjectKanbanComponent,
-        DesignComponent,
-        WireframeComponent,
         AgePipe,
         FunctionPipe,
         SumPipe

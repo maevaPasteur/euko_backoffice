@@ -46,14 +46,6 @@
     color: $dark-grey;
     font-weight: 500;
   }
-
-  &.condensed {
-    font-family: $font-condensed;
-    font-weight: 500;
-    letter-spacing: 0.15px;
-    font-size: 14px;
-    color: $dark-grey;
-  }
   &.up {
     text-transform: uppercase;
     font-weight: 200;
@@ -83,4 +75,9 @@
       background-color: $pink;
     }
   }
+}
+
+.number {
+  font-size: 35px;
+  font-weight: 500;
 }

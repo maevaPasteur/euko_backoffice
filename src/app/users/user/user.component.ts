@@ -36,6 +36,11 @@ export class UserComponent implements OnInit {
                         labels.push(months[i]);
                     }
 
+                    const canvas: any = document.getElementById('inscriptionChart');
+                    const gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 220);
+                    gradient.addColorStop(0, 'rgba(255,204,191, .5');
+                    gradient.addColorStop(1, 'rgba(255,204,191, 0');
+
                     that.myChart = new Chart(idChart, {
                         type: chartType,
                         data: {
@@ -46,7 +51,7 @@ export class UserComponent implements OnInit {
                                 lineTension: 0.5,
                                 borderColor: '#fedcdc',
                                 borderWidth: 2,
-                                backgroundColor: 'linear-gradient(#ffffff, #9198e5)',
+                                backgroundColor: gradient,
                                 pointBackgroundColor: '#fedcdc',
                             }]
                         },
@@ -86,7 +91,7 @@ export class UserComponent implements OnInit {
                             legend: {
                                 display: false,
                             },
-                            cutoutPercentage: 60,
+                            cutoutPercentage: 90,
                             title: {
                                 display: false,
                             }

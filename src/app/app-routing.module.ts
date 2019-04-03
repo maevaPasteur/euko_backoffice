@@ -12,8 +12,6 @@ import { ProjectComponent  } from './projects/project/project.component';
 import { ProjectListComponent  } from './projects/project-list/project-list.component';
 import { ProjectKanbanComponent } from './projects/project-kanban/project-kanban.component';
 import { ProjectToValidComponent  } from './projects/project-to-valid/project-to-valid.component';
-import { DesignComponent } from './graphic/design/design.component';
-import { WireframeComponent } from './graphic/wireframe/wireframe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,9 +24,7 @@ const routes: Routes = [
   { path: 'projet', component: ProjectComponent },
   { path: 'projet/liste', component: ProjectListComponent },
   { path: 'projet/a-valider', component: ProjectToValidComponent },
-  { path: 'projet/kanban', component: ProjectKanbanComponent },
-  { path: 'charte-grahique', component: DesignComponent },
-  { path: 'maquettes', component: WireframeComponent },
+  { path: 'projet/kanban', component: ProjectKanbanComponent }
 ];
 
 @NgModule({

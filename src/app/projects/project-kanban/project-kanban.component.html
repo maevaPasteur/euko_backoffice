@@ -2,7 +2,7 @@
   <div class="box full">
     <div class="box-container">
       <div class="header">
-        <h2 class="title light medium">Liste des projets</h2>
+        <h2 class="title">Liste des projets</h2>
         <div class="change-view">
           <a routerLink="/projet/liste" class="icon-list text dark mr10"></a>
           <a routerLink="/projet/kanban" class="icon-kanban text light-grey"></a>
@@ -12,8 +12,8 @@
   </div>
   <div class="box small" *ngFor="let project of projects">
     <div class="box-container">
-      <div class="header underline">
-        <h2 class="title light medium">{{ project.title }}</h2>
+      <div class="header">
+        <h2 class="title">{{ project.title }}</h2>
       </div>
       <div class="content">
         <p class="title bold big dark">{{ project.price }}€</p>
