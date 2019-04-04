@@ -6,6 +6,7 @@
     "lastname": "Chery",
     "birthdate": "1995-03-14T12:02:38.294Z",
     "city": "paris",
+    "postal": "75011",
     "offers": [
       {
         "project": {
@@ -46,11 +47,33 @@
   },
   {
     "id": "56a407a0-2527-4981-9e8c-d44f93b0a8f3",
+    "email": "samantha.chery@hetic.net",
+    "firstname": "Lorent",
+    "lastname": "Beauvais",
+    "birthdate": "1965-03-10T12:02:20.294Z",
+    "city": "paris",
+    "postal": "75012",
+    "offers": [
+      {
+        "project": {
+          "price": 500,
+          "interests": 3.5,
+          "state": "unvalid",
+          "timeLaps": 3
+        },
+        "state": "waiting"
+      }
+    ],
+    "projects": []
+  },
+  {
+    "id": "56a407a0-2527-4981-9e8c-d44f93b0a8f3",
     "email": "hugo.dupont@hetic.net",
     "firstname": "hugo",
     "lastname": "dupont",
     "birthdate": "1987-03-04T12:12:38.294Z",
     "city": "paris",
+    "postal": "75006",
     "offers": [
       {
         "project": {
@@ -126,6 +149,7 @@
     "lastname": "perrez",
     "birthdate": "1973-04-21T12:03:38.294Z",
     "city": "Lyon",
+    "postal": "69000",
     "offers": [],
     "projects": [
       {
@@ -167,6 +191,7 @@
     "lastname": "lorenzo",
     "birthdate": "1998-03-18T12:11:38.294Z",
     "city": "dijon",
+    "postal": "39100",
     "offers": [],
     "projects": [
       {
@@ -214,6 +239,7 @@
     "lastname": "dupont",
     "birthdate": "1987-03-08T12:06:38.294Z",
     "city": "montpellier",
+    "postal": "25000",
     "offers": [
       {
         "project": {
@@ -243,6 +269,7 @@
     "lastname": "renette",
     "birthdate": "1992-03-02T12:10:38.294Z",
     "city": "paris",
+    "postal": "75002",
     "offers": [
       {
         "project": {
@@ -272,6 +299,7 @@
     "lastname": "thierry",
     "birthdate": "1984-03-22T12:01:38.294Z",
     "city": "paris",
+    "postal": "75001",
     "offers": [],
     "projects": []
   }

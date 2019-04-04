@@ -21,66 +21,32 @@
         <table class="table">
           <thead class="bg-ty">
           <tr>
-            <th class="text bold">Id</th>
-            <th class="text bold">Pseudo</th>
-            <th class="text bold">Age</th>
-            <th class="text bold">Demande</th>
-            <th class="text bold">Refusées</th>
-            <th class="text bold">%</th>
-            <th class="text bold">En attentes</th>
-            <th class="text bold">%</th>
-            <th class="text bold">Empruntées</th>
-            <th class="text bold">%</th>
+            <th>Prénom</th>
+            <th>Age</th>
+            <th>Demandes</th>
+            <th>€</th>
+            <th>Refusées</th>
+            <th>%</th>
+            <th>En attentes</th>
+            <th>%</th>
+            <th>Empruntées</th>
+            <th>€</th>
+            <th>%</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let user of users">
-            <td>
-              <a href="#" class="bg circle small green">
-                <span class="text bold black ">{{ user.id }}</span>
-              </a>
-            </td>
-            <td>
-              {{ user.username }}
-            </td>
-            <td>
-              {{ user.age }}ans
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'all', 'sum') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'reject', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'reject', 'rate') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'waiting', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'waiting', 'rate') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'accept', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.loaning, 'accept', 'rate') }}
-              </span>
-            </td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.birthdate | date:'dd/mm/yyyy' | age }}</td>
+            <td><span class="text-bold">{{user | sum: 'projects':'ask':'num'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'ask'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'rejected':'num'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'rejected':'perc'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'waiting':'num'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'waiting':'perc'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'accepted':'num'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'accepted'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'accepted':'perc'}}</span></td>
           </tr>
           </tbody>
         </table>

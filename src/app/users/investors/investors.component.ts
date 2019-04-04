@@ -8,6 +8,7 @@ import {ExportService} from '../../services/export/export.service';
     templateUrl: './investors.component.html',
     styleUrls: ['./investors.component.scss']
 })
+
 export class InvestorsComponent implements OnInit {
 
     values: any;
@@ -19,38 +20,18 @@ export class InvestorsComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.data.getUsers('investissor').subscribe(res => {
+        this.data.getUsers('all').subscribe(res => {
                 this.values = res;
-                this.users = this.values.user;
-                console.log(this.users);
+                let investors = [];
+                for (let i = 0; i < this.values.length; i++) {
+                    if (this.values[i].offers.length > 0) {
+                        investors.push(this.values[i]);
+                    }
+                }
+                this.users = investors;
             }
         );
 
         this.excel.exportExcel();
-
-        this.getSum = function (investment: any, type: any, ask: any) {
-            let sum = 0;
-            let totalRate = 0;
-            let mediumRate = 0;
-            let numberOffer = 0;
-
-            for (let i = 0; i < investment.length; i++) {
-                if (investment[i].state === type) {
-                    numberOffer += 1;
-                    sum += investment[i].sum;
-                    totalRate += investment[i].interestRate;
-                }
-            }
-            if (sum > 0 && ask === 'sum') {
-                return sum + '€';
-            }
-            if (sum > 0 && ask === 'rate') {
-                mediumRate = totalRate / numberOffer;
-                return mediumRate + '%';
-            }
-            if (sum > 0 && ask === 'number') {
-                return numberOffer;
-            }
-        };
     }
 }

@@ -19,42 +19,17 @@ export class BorrowersComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.data.getUsers('borrower').subscribe(res => {
+        this.data.getUsers('all').subscribe(res => {
                 this.values = res;
-                this.users = this.values.user;
-            }
-        );
-
-        this.getSum = function (loaning: any, type: any, ask: any) {
-            let sum = 0;
-            let totalRate = 0;
-            let mediumRate = 0;
-            let numberOffer = 0;
-
-            for (let i = 0; i < loaning.length; i++) {
-                if (type === 'all') {
-                    sum += loaning[i].sum;
-                } else {
-                    for (let u = 0; u < loaning[i].offers.length; u++) {
-                        if (loaning[i].offers[u].state === type) {
-                            numberOffer += 1;
-                            totalRate += loaning[i].offers[u].interestRate;
-                        }
+                let borrowres = [];
+                for (let i = 0; i < this.values.length; i++) {
+                    if (this.values[i].projects.length > 0) {
+                        borrowres.push(this.values[i]);
                     }
                 }
+                this.users = borrowres;
             }
-            if (sum > 0 && ask === 'sum') {
-                return sum + '€';
-            }
-            if (totalRate > 0 && ask === 'rate') {
-                mediumRate = totalRate / numberOffer;
-                return mediumRate + '%';
-            }
-            if (numberOffer > 0 && ask === 'number') {
-                return numberOffer;
-            }
-        };
-
+        );
         this.excel.exportExcel();
     }
 }

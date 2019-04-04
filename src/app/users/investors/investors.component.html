@@ -1,99 +1,52 @@
 <div class="container investor-list">
-  <div class="box full">
-    <div class="box-container">
-      <div class="header">
-        <h2 class="title">Investisseurs</h2>
-      </div>
+    <div class="box full">
+        <div class="box-container">
+            <div class="header">
+                <h2 class="title">Investisseurs</h2>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="box small">
-    <div class="box-container excel">
-      <div class="content" id="btnExport" data-name="investisseurs">
-        <p>Exporter au format Excel</p>
-        <p class="btn">télécharger</p>
-        <img src="../../../assets/images/user/download.svg" alt="download">
-      </div>
+    <div class="box small">
+        <div class="box-container excel">
+            <div class="content" id="btnExport" data-name="investisseurs">
+                <p>Exporter au format Excel</p>
+                <p class="btn">télécharger</p>
+                <img src="../../../assets/images/user/download.svg" alt="download">
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="box full">
-    <div class="box-container">
-      <div class="content" id="dvData">
-        <table class="table">
-          <thead>
-          <tr>
-            <th class="text bold">Id</th>
-            <th class="text bold">Pseudo</th>
-            <th class="text bold">Refusées</th>
-            <th class="text bold">Qtt</th>
-            <th class="text bold">%</th>
-            <th class="text bold">En attentes</th>
-            <th class="text bold">Qtt</th>
-            <th class="text bold">%</th>
-            <th class="text bold">Prêtées</th>
-            <th class="text bold">Qtt</th>
-            <th class="text bold">%</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let user of users">
-            <td>
-              <a href="#" class="bg circle small green">
-                <span class="text bold black ">{{ user.id }}</span>
-              </a>
-            </td>
-            <td>
-              {{ user.username }}
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'reject', 'sum') }}
-              </span>
-            </td>
-            <td>
-              <span class="text">
-                    {{ getSum(user.investment, 'reject', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'reject', 'rate') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'waiting', 'sum') }}
-              </span>
-            </td>
-            <td>
-              <span class="text">
-                    {{ getSum(user.investment, 'waiting', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'waiting', 'rate') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'accept', 'sum') }}
-              </span>
-            </td>
-            <td>
-              <span class="text">
-                    {{ getSum(user.investment, 'accept', 'number') }}
-              </span>
-            </td>
-            <td>
-              <span class="text bold">
-                    {{ getSum(user.investment, 'accept', 'rate') }}
-              </span>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="box full">
+        <div class="box-container">
+            <div class="content" id="dvData">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Pseudo</th>
+                        <th>Refusées</th>
+                        <th>Qtt</th>
+                        <th>%</th>
+                        <th>En attentes</th>
+                        <th>Qtt</th>
+                        <th>%</th>
+                        <th>Prêtées</th>
+                        <th>Qtt</th>
+                        <th>%</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let user of users">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 

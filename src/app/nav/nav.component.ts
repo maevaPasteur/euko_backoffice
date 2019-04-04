@@ -15,9 +15,7 @@ export class NavComponent implements OnInit {
   ngOnInit() {
     this.links = document.querySelectorAll('nav a');
   }
-
   activeLinks(event) {
-    console.log(this.links);
     for (let i = 0, y = this.links.length; i < y; i++) {
         this.links[i].classList.remove('active');
     }
