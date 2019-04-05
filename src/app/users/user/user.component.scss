@@ -42,3 +42,14 @@
 .box-container {
   height: calc(100% - 14px);
 }
+
+#mapFr {
+  width: 100%;
+  height: auto;
+
+  path {
+    &.users  {
+      fill: #cccccc;
+    }
+  }
+}

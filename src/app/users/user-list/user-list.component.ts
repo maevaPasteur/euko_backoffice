@@ -26,15 +26,5 @@ export class UserListComponent implements OnInit {
         );
 
         this.excel.exportExcel();
-
-        this.getSum = function (val: any) {
-            let sum = 0;
-            for (let i = 0; i < val.length; i++) {
-                sum += val[i].sum;
-            }
-            if (sum > 0) {
-                return sum + '€';
-            }
-        };
     }
 }

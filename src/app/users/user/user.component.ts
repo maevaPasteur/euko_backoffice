@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ViewChild, ElementRef, OnInit} from '@angular/core';
+import {DataService} from '../../services/data/data.service';
 import * as $ from 'jquery';
 import {Chart} from 'chart.js';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 @Component({
     selector: 'app-user',
@@ -9,12 +11,65 @@ import {Chart} from 'chart.js';
 })
 export class UserComponent implements OnInit {
 
-    myChart: Chart;
+    myChart: any;
+    ps: any;
+    usersQtt: any;
+    borrowers = 0;
+    investors = 0;
+    mixtes = 0;
+    neutrals = 0;
 
-    constructor() {
+    constructor(private data: DataService) {
     }
 
+    @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+
     ngOnInit() {
+
+        this.ps = new PerfectScrollbar('.container.user', {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+
+        let users;
+        this.usersQtt = 0;
+        let usersList = [];
+        let mapData = {};
+
+        this.data.getUsers('all').subscribe(res => {
+                users = res;
+                this.usersQtt = users.length;
+                const mapFr = $('#mapFr');
+                const mapPaths = mapFr.find('path');
+
+                for (let i = 0; i < this.usersQtt; i++) {
+                    let newValue = users[i].postal;
+                    newValue = newValue.slice(0, 2);
+                    usersList.push(newValue);
+                    if (users[i].projects.length > 0 && users[i].offers.length > 0) {
+                        this.mixtes += 1;
+                    } else if (users[i].projects.length > 0 && users[i].offers.length === 0) {
+                        this.borrowers += 1;
+                    } else if (users[i].projects.length === 0 && users[i].offers.length > 0) {
+                        this.investors += 1;
+                    } else {
+                        this.neutrals += 1;
+                    }
+                }
+                for (let i = 0; i < usersList.length; i++) {
+                    if (mapData[usersList[i]] === undefined) {
+                        Object.defineProperty(mapData, usersList[i], {
+                            value: 1,
+                            writable: true
+                        });
+                        mapFr.find('path[data-num=' + usersList[i] + ']').removeClass().addClass('users');
+                    } else {
+                        mapData[usersList[i]] += 1;
+                    }
+                }
+            }
+        );
 
         const months = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
         const colors = ['#fedcdc', '#97fda5', '#5f78f8', '#e7ebee', '#373737'];
@@ -74,7 +129,7 @@ export class UserComponent implements OnInit {
                     break;
                 case 'doughnut':
 
-                    if ( String($(this).data('label')) === 'users') {
+                    if (String($(this).data('label')) === 'users') {
                         labels = ['Investisseurs', 'Emprunteurs', 'Mixtes', 'Neutres'];
                     }
 
