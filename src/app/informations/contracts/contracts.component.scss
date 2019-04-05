@@ -1,0 +1,59 @@
+.contracts {
+  .document {
+    padding-top: 20px;
+    margin: auto;
+    h1 {
+      font-size: 30px;
+      color: #555555;
+      font-weight: 100;
+      margin-bottom: 15px;
+    }
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+      span {
+        color: #5f78f8;
+        font-weight: 700;
+      }
+    }
+    img {
+      width: 80%;
+      display: block;
+      margin: 20px auto 0;
+      height: auto;
+      max-width: 200px;
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+  li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: .5;
+    &:before {
+      content: '';
+    }
+  }
+  .musthave {
+    justify-content: flex-start;
+    height: auto;
+    h2 {
+      margin-bottom: 25px;
+      color: #555555;
+      font-weight: 100;
+    }
+    ul {
+      columns: 3;
+    }
+    li {
+      &:before {
+        content:'\e805';
+        font-family: 'Fontello', fantasy;
+        font-size: 9px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
