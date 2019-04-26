@@ -51,5 +51,14 @@
     &.users  {
       fill: #cccccc;
     }
+    &.borrowers {
+      fill: #97fda5;
+    }
+    &.investors {
+      fill: #ffccbf;;
+    }
+    &.mixtes {
+      fill: #5f78f8;;
+    }
   }
 }

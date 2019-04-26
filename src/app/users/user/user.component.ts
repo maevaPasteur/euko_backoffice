@@ -18,6 +18,9 @@ export class UserComponent implements OnInit {
     investors = 0;
     mixtes = 0;
     neutrals = 0;
+    hoverMap;
+
+    usersObj;
 
     constructor(private data: DataService) {
     }
@@ -34,42 +37,65 @@ export class UserComponent implements OnInit {
 
         let users;
         this.usersQtt = 0;
-        let usersList = [];
-        let mapData = {};
+        const usersList = [];
+        const mapData = {};
+        const mapFr = $('#mapFr');
+        const mapPaths = mapFr.find('path');
+
+        this.usersObj = {
+            'mixtes': [],
+            'borrowers': [],
+            'investors': [],
+            'neutrals': [],
+            'all': []
+        };
 
         this.data.getUsers('all').subscribe(res => {
                 users = res;
                 this.usersQtt = users.length;
-                const mapFr = $('#mapFr');
-                const mapPaths = mapFr.find('path');
 
                 for (let i = 0; i < this.usersQtt; i++) {
                     let newValue = users[i].postal;
                     newValue = newValue.slice(0, 2);
                     usersList.push(newValue);
+                    this.usersObj['all'].push(newValue);
                     if (users[i].projects.length > 0 && users[i].offers.length > 0) {
                         this.mixtes += 1;
+                        this.usersObj['mixtes'].push(newValue);
                     } else if (users[i].projects.length > 0 && users[i].offers.length === 0) {
                         this.borrowers += 1;
+                        this.usersObj['borrowers'].push(newValue);
                     } else if (users[i].projects.length === 0 && users[i].offers.length > 0) {
                         this.investors += 1;
+                        this.usersObj['investors'].push(newValue);
                     } else {
                         this.neutrals += 1;
+                        this.usersObj['neutrals'].push(newValue);
                     }
                 }
-                for (let i = 0; i < usersList.length; i++) {
-                    if (mapData[usersList[i]] === undefined) {
-                        Object.defineProperty(mapData, usersList[i], {
-                            value: 1,
-                            writable: true
-                        });
-                        mapFr.find('path[data-num=' + usersList[i] + ']').removeClass().addClass('users');
-                    } else {
-                        mapData[usersList[i]] += 1;
-                    }
-                }
+                console.log(this.usersObj);
+                this.hoverMap('all');
+                // for (let i = 0; i < usersList.length; i++) {
+                //     if (mapData[usersList[i]] === undefined) {
+                //         Object.defineProperty(mapData, usersList[i], {
+                //             value: 1,
+                //             writable: true
+                //         });
+                //         mapFr.find('path[data-num=' + usersList[i] + ']').removeClass().addClass('users');
+                //     } else {
+                //         mapData[usersList[i]] += 1;
+                //     }
+
+                // }
             }
         );
+
+        this.hoverMap = function (e) {
+            if (e === 'all') {
+                mapFr.find('path').removeClass();
+                // console.log("ho");
+            }
+        };
 
         const months = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
         const colors = ['#fedcdc', '#97fda5', '#5f78f8', '#e7ebee', '#373737'];
