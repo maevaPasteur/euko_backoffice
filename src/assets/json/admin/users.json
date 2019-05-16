@@ -235,24 +235,24 @@
   {
     "id": "56a407a0-2527-4981-9e8c-d44f93b0a8f3",
     "email": "hugo.dupont@hetic.net",
-    "firstname": "hugo",
+    "firstname": "Léon",
     "lastname": "dupont",
-    "birthdate": "1987-03-08T12:06:38.294Z",
+    "birthdate": "1979-03-08T12:06:38.294Z",
     "city": "montpellier",
     "postal": "25000",
     "offers": [
       {
         "project": {
-          "price": 500,
+          "price": 230,
           "interests": 2.9,
           "state": "unvalid",
           "timeLaps": 5
         },
-        "state": "waiting"
+        "state": "rejected"
       },
       {
         "project": {
-          "price": 200,
+          "price": 520,
           "interests": 3,
           "state": "valid",
           "timeLaps": 1

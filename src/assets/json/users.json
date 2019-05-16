@@ -191,6 +191,28 @@
       ]
     },
     {
+      "id": 25,
+      "username": "ludovikl",
+      "name": "Louanne",
+      "firstname": "Dumont",
+      "birthday": "1977-02-06T18:25:43.511Z",
+      "registration": "2018-12-05T18:25:43.511Z",
+      "localisation": "Paris",
+      "age": 57,
+      "loaning":[
+      ],
+      "investment":[
+        {
+          "idBorrower": 2,
+          "sum": 582,
+          "usernameBorrower": "riri39",
+          "dateProposition": "2018-16-28T12:12:11.511Z",
+          "interestRate": 12,
+          "state": "reject"
+        }
+      ]
+    },
+    {
       "id": 8,
       "username": "mimi55",
       "name": "Mylène",

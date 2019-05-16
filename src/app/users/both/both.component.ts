@@ -12,62 +12,24 @@ export class BothComponent implements OnInit {
 
     values: any;
     users: any;
-    private getSum;
 
     constructor(private data: DataService,
                 private excel: ExportService) {
     }
 
     ngOnInit() {
-        this.data.getUsers('both').subscribe(res => {
+        this.data.getUsers('all').subscribe(res => {
                 this.values = res;
-                this.users = this.values.user;
-            }
-        );
-
-        this.excel.exportExcel();
-
-        this.getSum = function (user: any, type: any, ask: any) {
-            let sum = 0;
-            let numberOffer = 0;
-            let totalRate = 0;
-            let mediumRate = 0;
-
-            for (let i = 0; i < user.length; i++) {
-
-                if (user[i].offers) {
-                    if (type === 'ask') {
-                        sum += user[i].sum;
-                    } else if (type === 'accept') {
-                        for (let j = 0; j < user[i].offers.length; j++) {
-                            if (user[i].offers[j].state === 'accept') {
-                                totalRate += user[i].offers[j].interestRate;
-                                sum += user[i].sum;
-                                numberOffer += 1;
-                            }
-                        }
-                    }
-                } else {
-                    if (user[i].state === type) {
-                        numberOffer += 1;
-                        sum += user[i].sum;
-                        totalRate += user[i].interestRate;
+                const mix = [];
+                for (let i = 0; i < this.values.length; i++) {
+                    if (this.values[i].projects.length > 0 && this.values[i].offers.length > 0) {
+                        mix.push(this.values[i]);
                     }
                 }
+                this.users = mix;
             }
-
-
-            if (sum > 0 && ask === 'sum') {
-                return sum + '€';
-            }
-            if (totalRate > 0 && ask === 'rate') {
-                mediumRate = Math.round((totalRate / numberOffer) * 10) / 10;
-                return mediumRate + '%';
-            }
-            if (sum > 0 && ask === 'number') {
-                return numberOffer;
-            }
-        };
+        );
+        this.excel.exportExcel();
     }
 }
 

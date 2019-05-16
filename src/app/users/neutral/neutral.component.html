@@ -8,26 +8,20 @@
   </div>
   <div class="box full">
     <div class="box-container">
-      <div class="content">
+      <div class="content" id="dvData">
         <table class="table">
-          <thead>
+          <thead class="bg-tp">
           <tr>
-            <th class="text bold">Id</th>
-            <th class="text bold">Pseudo</th>
-            <th class="text bold">Age</th>
-            <th class="text bold">Ville</th>
-            <th class="text bold">Inscriprion</th>
-            <th class="text bold">Dernière connexion</th>
+            <th>Pseudo</th>
+            <th>Age</th>
+            <th>Ville</th>
+            <th>Inscriprion</th>
+            <th>Dernière connexion</th>
             <th></th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let user of users">
-            <td>
-              <a href="#" class="bg circle small green">
-                <span class="text bold black ">{{ user.id }}</span>
-              </a>
-            </td>
             <td>
               {{ user.username }}ans
             </td>

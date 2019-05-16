@@ -19,10 +19,10 @@
         <div class="box-container">
             <div class="content" id="dvData">
                 <table class="table">
-                    <thead>
+                    <thead class="bg-tb">
                     <tr>
-                        <th>Id</th>
-                        <th>Pseudo</th>
+                        <th>Prénom</th>
+                        <th>Age</th>
                         <th>Refusées</th>
                         <th>Qtt</th>
                         <th>%</th>
@@ -36,12 +36,17 @@
                     </thead>
                     <tbody>
                     <tr *ngFor="let user of users">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ user.firstname }}</td>
+                        <td>{{ user.birthdate | date:'dd/mm/yyyy' | age }}</td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'rejected':'sum'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'rejected':'num'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'rejected':'perc'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'waiting':'sum'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'waiting':'num'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'waiting':'perc'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'accepted':'sum'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'accepted':'num'}}</span></td>
+                        <td><span class="text-bold">{{user | sum: 'offers':'accepted':'perc'}}</span></td>
                     </tr>
                     </tbody>
                 </table>

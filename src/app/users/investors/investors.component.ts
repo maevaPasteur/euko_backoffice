@@ -22,16 +22,15 @@ export class InvestorsComponent implements OnInit {
     ngOnInit() {
         this.data.getUsers('all').subscribe(res => {
                 this.values = res;
-                let investors = [];
+                const mix = [];
                 for (let i = 0; i < this.values.length; i++) {
                     if (this.values[i].offers.length > 0) {
-                        investors.push(this.values[i]);
+                        mix.push(this.values[i]);
                     }
                 }
-                this.users = investors;
+                this.users = mix;
             }
         );
-
         this.excel.exportExcel();
     }
 }
