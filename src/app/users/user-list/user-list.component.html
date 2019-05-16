@@ -35,8 +35,8 @@
             <td>{{ user.birthdate | date:'dd/mm/yyyy' | age }}</td>
             <td>{{ user.city }}</td>
             <td>{{user | function }}</td>
-            <td><span class="text-bold">{{user | sum: 'offers':'accepted'}}</span></td>
-            <td><span class="text-bold">{{user | sum: 'projects':'accepted'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'offers':'accepted':'sum'}}</span></td>
+            <td><span class="text-bold">{{user | sum: 'projects':'accepted':'sum'}}</span></td>
           </tr>
           </tbody>
         </table>
