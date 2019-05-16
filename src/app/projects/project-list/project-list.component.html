@@ -10,13 +10,21 @@
       </div>
     </div>
   </div>
+  <div class="box small">
+    <div class="box-container excel">
+      <div (click)="exportExcel('liste_projets')" class="content">
+        <p>Exporter au format Excel</p>
+        <p class="btn">télécharger</p>
+        <img src="../../../assets/images/user/download.svg" alt="download">
+      </div>
+    </div>
+  </div>
   <div class="box full">
     <div class="box-container">
       <div class="content" id="dvData">
         <table class="table">
-          <thead>
+          <thead class="bg-tb">
           <tr>
-            <th class="text bold">Id</th>
             <th class="text bold">Titre</th>
             <th class="text bold">Prix</th>
             <th class="text bold">Description</th>
@@ -27,11 +35,6 @@
           </thead>
           <tbody>
           <tr *ngFor="let project of projects">
-            <td>
-              <a href="#" class="bg circle small green">
-                <span class="text bold black ">{{ project.id }}</span>
-              </a>
-            </td>
             <td>{{ project.title }}</td>
             <td>{{ project.price }}€</td>
             <td>{{ project.description }}</td>
@@ -42,7 +45,6 @@
           </tbody>
         </table>
       </div>
-      <p id="btnExport" data-name="liste_projets" class="btn blue excel mb20"><span class="text bold white">Exporter format Excel</span></p>
     </div>
   </div>
 </div>

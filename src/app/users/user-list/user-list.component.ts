@@ -24,7 +24,9 @@ export class UserListComponent implements OnInit {
                 this.users = res;
             }
         );
+    }
 
-        this.excel.exportExcel();
+    exportExcel(name) {
+        ExportService.exportExcel(name);
     }
 }

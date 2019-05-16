@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as $ from 'jquery';
 import {DataService} from '../../services/data/data.service';
 
 
@@ -19,7 +18,6 @@ export class ProjectKanbanComponent implements OnInit {
     ngOnInit() {
         this.data.getProject('all').subscribe(res => {
                 this.projects = res;
-                console.log(this.projects);
             }
         );
     }

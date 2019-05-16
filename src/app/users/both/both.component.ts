@@ -29,7 +29,10 @@ export class BothComponent implements OnInit {
                 this.users = mix;
             }
         );
-        this.excel.exportExcel();
+    }
+
+    exportExcel(name) {
+        ExportService.exportExcel(name);
     }
 }
 

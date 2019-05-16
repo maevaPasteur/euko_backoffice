@@ -30,6 +30,8 @@ export class BorrowersComponent implements OnInit {
                 this.users = borrowres;
             }
         );
-        this.excel.exportExcel();
+    }
+    exportExcel(name) {
+        ExportService.exportExcel(name);
     }
 }
