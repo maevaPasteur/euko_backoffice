@@ -10,7 +10,6 @@ import PerfectScrollbar from 'perfect-scrollbar';
     styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-
     myChart: any;
     ps: any;
     usersQtt: any;
@@ -19,7 +18,6 @@ export class UserComponent implements OnInit {
     mixtes = 0;
     neutrals = 0;
     hoverMap;
-
     usersObj;
 
     constructor(private data: DataService) {
@@ -28,7 +26,6 @@ export class UserComponent implements OnInit {
     @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
     ngOnInit() {
-
         this.ps = new PerfectScrollbar('.container.user', {
             wheelSpeed: 2,
             wheelPropagation: true,
@@ -53,7 +50,6 @@ export class UserComponent implements OnInit {
         this.data.getUsers('all').subscribe(res => {
                 users = res;
                 this.usersQtt = users.length;
-
                 for (let i = 0; i < this.usersQtt; i++) {
                     let newValue = users[i].postal;
                     newValue = newValue.slice(0, 2);
@@ -73,27 +69,24 @@ export class UserComponent implements OnInit {
                         this.usersObj['neutrals'].push(newValue);
                     }
                 }
-                console.log(this.usersObj);
                 this.hoverMap('all');
-                // for (let i = 0; i < usersList.length; i++) {
-                //     if (mapData[usersList[i]] === undefined) {
-                //         Object.defineProperty(mapData, usersList[i], {
-                //             value: 1,
-                //             writable: true
-                //         });
-                //         mapFr.find('path[data-num=' + usersList[i] + ']').removeClass().addClass('users');
-                //     } else {
-                //         mapData[usersList[i]] += 1;
-                //     }
-
-                // }
+                for (let i = 0; i < usersList.length; i++) {
+                    if (mapData[usersList[i]] === undefined) {
+                        Object.defineProperty(mapData, usersList[i], {
+                            value: 1,
+                            writable: true
+                        });
+                        mapFr.find('path[data-num=' + usersList[i] + ']').removeClass().addClass('users');
+                    } else {
+                        mapData[usersList[i]] += 1;
+                    }
+                }
             }
         );
 
         this.hoverMap = function (e) {
             if (e === 'all') {
                 mapFr.find('path').removeClass();
-                // console.log("ho");
             }
         };
 
@@ -104,24 +97,19 @@ export class UserComponent implements OnInit {
         let idChart;
         let chartType;
         const that = this;
-
         $('.chart-container').each(function () {
             values = $(this).data('value');
             idChart = $(this).attr('id');
             chartType = $(this).data('type');
-
             switch (chartType) {
                 case 'line':
-
                     for (let i = 0, vl = values.length, ml = months.length; i < vl && i < ml; i++) {
                         labels.push(months[i]);
                     }
-
                     const canvas: any = document.getElementById('inscriptionChart');
                     const gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 220);
                     gradient.addColorStop(0, 'rgba(255,204,191, .5');
                     gradient.addColorStop(1, 'rgba(255,204,191, 0');
-
                     that.myChart = new Chart(idChart, {
                         type: chartType,
                         data: {
@@ -154,11 +142,9 @@ export class UserComponent implements OnInit {
                     });
                     break;
                 case 'doughnut':
-
                     if (String($(this).data('label')) === 'users') {
                         labels = ['Investisseurs', 'Emprunteurs', 'Mixtes', 'Neutres'];
                     }
-
                     that.myChart = new Chart(idChart, {
                         type: 'doughnut',
                         data: {
