@@ -1,5 +1,6 @@
 import {Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import {DataService} from '../../services/data/data.service';
+import * as $ from 'jquery';
 import {Chart} from 'chart.js';
 import PerfectScrollbar from 'perfect-scrollbar';
 
