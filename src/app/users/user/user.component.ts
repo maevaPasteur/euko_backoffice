@@ -1,6 +1,5 @@
 import {Component, ViewChild, ElementRef, OnInit} from '@angular/core';
 import {DataService} from '../../services/data/data.service';
-import * as $ from 'jquery';
 import {Chart} from 'chart.js';
 import PerfectScrollbar from 'perfect-scrollbar';
 
@@ -90,83 +89,59 @@ export class UserComponent implements OnInit {
             }
         };
 
-        const months = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const colors = ['#fedcdc', '#97fda5', '#5f78f8', '#e7ebee', '#373737'];
-        let values;
-        let labels = [];
-        let idChart;
-        let chartType;
-        const that = this;
-        $('.chart-container').each(function () {
-            values = $(this).data('value');
-            idChart = $(this).attr('id');
-            chartType = $(this).data('type');
-            switch (chartType) {
-                case 'line':
-                    for (let i = 0, vl = values.length, ml = months.length; i < vl && i < ml; i++) {
-                        labels.push(months[i]);
-                    }
-                    const canvas: any = document.getElementById('inscriptionChart');
-                    const gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 220);
-                    gradient.addColorStop(0, 'rgba(255,204,191, .5)');
-                    gradient.addColorStop(1, 'rgba(255,204,191, 0)');
-                    console.log(values);
-                    that.myChart = new Chart(idChart, {
-                        type: chartType,
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: '',
-                                data: values,
-                                lineTension: 0.5,
-                                borderColor: '#fedcdc',
-                                borderWidth: 2,
-                                backgroundColor: gradient,
-                                pointBackgroundColor: '#fedcdc',
-                            }]
-                        },
-                        options: {
-                            legend: {
-                                display: false,
-                            },
-                            title: {
-                                display: false,
-                            },
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
+        const canvas: any = document.getElementById('inscriptionChart');
+        const gradient1 = canvas.getContext('2d').createLinearGradient(0, 0, 0, 220);
+        gradient1.addColorStop(0, 'rgba(255,204,191, .5)');
+        gradient1.addColorStop(1, 'rgba(255,204,191, 0)');
+
+        this.myChart = new Chart('inscriptionChart', {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: '',
+                    data: [24, 56, 320, 210, 40, 32, 86, 21, 54, 200, 256, 32, 54, 41],
+                    lineTension: 0.5,
+                    borderColor: '#fedcdc',
+                    borderWidth: 2,
+                    backgroundColor: gradient1,
+                    pointBackgroundColor: '#fedcdc',
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                title: {
+                    display: false,
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
                         }
-                    });
-                    break;
-                case 'doughnut':
-                    if (String($(this).data('label')) === 'users') {
-                        labels = ['Investisseurs', 'Emprunteurs', 'Mixtes', 'Neutres'];
-                    }
-                    that.myChart = new Chart(idChart, {
-                        type: 'doughnut',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                data: values,
-                                backgroundColor: colors
-                            }],
-                        },
-                        options: {
-                            legend: {
-                                display: false,
-                            },
-                            cutoutPercentage: 90,
-                            title: {
-                                display: false,
-                            }
-                        },
-                    });
-                    break;
+                    }]
+                }
             }
+        });
+        this.myChart = new Chart('blablaChart', {
+            type: 'doughnut',
+            data: {
+                labels: ['Investisseurs', 'Emprunteurs', 'Mixtes', 'Neutres'],
+                datasets: [{
+                    data: [230, 521, 186, 132],
+                    backgroundColor: ['#fedcdc', '#97fda5', '#5f78f8', '#e7ebee', '#373737']
+                }],
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                cutoutPercentage: 90,
+                title: {
+                    display: false,
+                }
+            },
         });
     }
 }
