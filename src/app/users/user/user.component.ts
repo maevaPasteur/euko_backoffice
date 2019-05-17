@@ -108,8 +108,9 @@ export class UserComponent implements OnInit {
                     }
                     const canvas: any = document.getElementById('inscriptionChart');
                     const gradient = canvas.getContext('2d').createLinearGradient(0, 0, 0, 220);
-                    gradient.addColorStop(0, 'rgba(255,204,191, .5');
-                    gradient.addColorStop(1, 'rgba(255,204,191, 0');
+                    gradient.addColorStop(0, 'rgba(255,204,191, .5)');
+                    gradient.addColorStop(1, 'rgba(255,204,191, 0)');
+                    console.log(values);
                     that.myChart = new Chart(idChart, {
                         type: chartType,
                         data: {

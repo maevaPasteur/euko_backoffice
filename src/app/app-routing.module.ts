@@ -23,10 +23,10 @@ const routes: Routes = [
   { path: 'utilisateurs/investisseurs', component: InvestorsComponent },
   { path: 'utilisateurs/innactifs', component: NeutralComponent },
   { path: 'utilisateurs/mixtes', component: BothComponent },
-  { path: 'projet', component: ProjectComponent },
-  { path: 'projet/liste', component: ProjectListComponent },
-  { path: 'projet/a-valider', component: ProjectToValidComponent },
-  { path: 'projet/kanban', component: ProjectKanbanComponent },
+  { path: 'projets', component: ProjectComponent },
+  { path: 'projets/liste', component: ProjectListComponent },
+  { path: 'projets/a-valider', component: ProjectToValidComponent },
+  { path: 'projets/kanban', component: ProjectKanbanComponent },
   { path: 'informations/parametres', component: ParametersComponent },
   { path: 'informations/contrats', component: ContractsComponent }
 ];

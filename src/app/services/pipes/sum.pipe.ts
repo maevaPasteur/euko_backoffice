@@ -67,10 +67,10 @@ export class SumPipe implements PipeTransform {
                     return sum;
                     break;
                 case 'sum' :
-                    return sum + '€';
+                    return sum;
                     break;
                 case 'perc' :
-                    return sum + '%';
+                    return sum;
             }
         }
     }
