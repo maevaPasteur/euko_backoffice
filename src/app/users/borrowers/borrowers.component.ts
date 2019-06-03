@@ -12,7 +12,8 @@ export class BorrowersComponent implements OnInit {
 
     values: any;
     users: any;
-    private getSum;
+    deletePopin: any;
+    userDelete: any;
 
     constructor(private data: DataService,
                 private excel: ExportService) {
@@ -30,8 +31,19 @@ export class BorrowersComponent implements OnInit {
                 this.users = borrowres;
             }
         );
+        this.deletePopin = document.querySelector('.delete-popin');
     }
+
     exportExcel(name) {
         ExportService.exportExcel(name);
+    }
+
+    openDeletePopin(name) {
+        this.userDelete = name;
+        this.deletePopin.classList.remove('hide');
+    }
+
+    closeDeletePopin() {
+        this.deletePopin.classList.add('hide');
     }
 }

@@ -38,8 +38,8 @@
               {{ user.lastCo | date:'M/d/yyyy'  }}
             </td>
             <td class="action-container">
-              <a href="#"><i class="show icon-search"></i></a>
-              <a href="#"><i class="remove icon-remove"></i></a>
+              <p><i class="show icon-search"></i></p>
+              <p><i (click)="openDeletePopin(user.firstname)" class="remove icon-remove"></i></p>
             </td>
           </tr>
           </tbody>
@@ -48,4 +48,10 @@
     </div>
   </div>
 </div>
-
+<div class="delete-popin hide">
+  <div>
+    <h2>Êtes vous certain de vouloir supprimer {{ userDelete | titlecase }} des utilisateurs ?</h2>
+    <p (click)="closeDeletePopin()" class="yes btn">Oui, je supprime</p>
+    <p (click)="closeDeletePopin()" class="return">Annuler</p>
+  </div>
+</div>

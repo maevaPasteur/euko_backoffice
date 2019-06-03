@@ -13,7 +13,8 @@ export class InvestorsComponent implements OnInit {
 
     values: any;
     users: any;
-    private getSum;
+    deletePopin: any;
+    userDelete: any;
 
     constructor(private data: DataService,
                 private excel: ExportService) {
@@ -31,9 +32,19 @@ export class InvestorsComponent implements OnInit {
                 this.users = mix;
             }
         );
+        this.deletePopin = document.querySelector('.delete-popin');
     }
 
     exportExcel(name) {
         ExportService.exportExcel(name);
+    }
+
+    openDeletePopin(name) {
+        this.userDelete = name;
+        this.deletePopin.classList.remove('hide');
+    }
+
+    closeDeletePopin() {
+        this.deletePopin.classList.add('hide');
     }
 }

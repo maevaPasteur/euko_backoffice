@@ -12,6 +12,8 @@ export class BothComponent implements OnInit {
 
     values: any;
     users: any;
+    deletePopin: any;
+    userDelete: any;
 
     constructor(private data: DataService,
                 private excel: ExportService) {
@@ -29,10 +31,20 @@ export class BothComponent implements OnInit {
                 this.users = mix;
             }
         );
+        this.deletePopin = document.querySelector('.delete-popin');
     }
 
     exportExcel(name) {
         ExportService.exportExcel(name);
+    }
+
+    openDeletePopin(name) {
+        this.userDelete = name;
+        this.deletePopin.classList.remove('hide');
+    }
+
+    closeDeletePopin() {
+        this.deletePopin.classList.add('hide');
     }
 }
 

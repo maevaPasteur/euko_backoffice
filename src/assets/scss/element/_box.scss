@@ -103,3 +103,61 @@
 #dvData {
   padding: 0;
 }
+
+.delete-popin {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0,0,0,.3);
+  top: 0;
+  left: 0;
+  transition: opacity ease-out .3s;
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  div {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .yes {
+    background-color: $blue;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    margin: 30px auto 20px;
+    transition: background-color ease-out .3s;
+    &:hover {
+      background-color: #596eda;
+    }
+  }
+
+  .return {
+    color: $medium-grey;
+    border-bottom: solid 1px $medium-grey;
+    padding-bottom: 3px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 60px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color ease-out .3s;
+    &:hover {
+      color: $dark-grey;
+    }
+  }
+}

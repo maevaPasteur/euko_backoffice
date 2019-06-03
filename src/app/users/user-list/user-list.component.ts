@@ -12,8 +12,8 @@ import {ExportService} from '../../services/export/export.service';
 export class UserListComponent implements OnInit {
 
     users: any;
-    values: any;
-    private getSum;
+    deletePopin: any;
+    userDelete: any;
 
     constructor(private data: DataService,
                 private excel: ExportService) {
@@ -24,9 +24,19 @@ export class UserListComponent implements OnInit {
                 this.users = res;
             }
         );
+        this.deletePopin = document.querySelector('.delete-popin');
     }
 
     exportExcel(name) {
         ExportService.exportExcel(name);
+    }
+
+    openDeletePopin(name) {
+        this.userDelete = name;
+        this.deletePopin.classList.remove('hide');
+    }
+
+    closeDeletePopin() {
+        this.deletePopin.classList.add('hide');
     }
 }
