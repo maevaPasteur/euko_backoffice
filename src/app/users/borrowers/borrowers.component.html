@@ -19,7 +19,7 @@
     <div class="box-container">
       <div class="content" id="dvData">
         <table class="table">
-          <thead class="bg-ty">
+          <thead>
           <tr>
             <th>Prénom</th>
             <th>Age</th>
@@ -34,6 +34,7 @@
             <th>Empruntées</th>
             <th>Qtt</th>
             <th>%</th>
+            <th></th>
           </tr>
           </thead>
           <tbody>
@@ -51,6 +52,10 @@
             <td><span class="text-bold">{{user | sum: 'projects':'accepted':'sum'}}</span></td>
             <td><span class="text-bold">{{user | sum: 'projects':'accepted':'num'}}</span></td>
             <td><span class="text-bold">{{user | sum: 'projects':'accepted':'perc'}}</span></td>
+            <td class="action-container">
+              <a href="#"><i class="show icon-search"></i></a>
+              <a href="#"><i class="remove icon-remove"></i></a>
+            </td>
           </tr>
           </tbody>
         </table>

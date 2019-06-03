@@ -1,11 +1,19 @@
 .box {
   &.small {
     width: 25%;
+    @media screen and (max-width: 1024px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 650px) {
+      width: 100%;
+    }
   }
   &.medium {
     width: 50%;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
   }
-
   &.full {
     width: 100%;
   }

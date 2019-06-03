@@ -1,0 +1,27 @@
+i {
+  width: 20px;
+  height: 20px;
+  background-color: #5f78f8;
+  border-radius: 50%;
+  transform: translateX(-10px);
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+header {
+  .top {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    position: fixed;
+    width: calc(100% - 200px);
+    left: 200px;
+    top: 0;
+  }
+}
+
+img {
+  width: 120px;
+  height: auto;
+  margin-left: 20px;
+}

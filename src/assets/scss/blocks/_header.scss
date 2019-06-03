@@ -1,29 +1,15 @@
-header {
-  .top {
-    background-color: $light-grey;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 15px;
-    position: fixed;
-    width: calc(100% - 200px);
-    left: 200px;
-    top: 0;
-  }
-}
 
 .container-nav {
-  background-color: #555555;
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
   width: $width-menu;
-  color: white;
 
   a {
     font-size: 16px;
     font-weight: 500;
-    color: white;
+    color: #333333;
   }
 
   h1 a {
@@ -32,8 +18,8 @@ header {
 
   h3 a,
   h2 a {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 20px;
+    margin-top: 30px;
     display: block;
     margin-bottom: 5px;
   }
@@ -43,7 +29,7 @@ header {
   }
 
   .nav {
-    margin: 45px 0 20px 10px;
+    margin: 45px 0 20px;
     ul {
       position: absolute;
     }
