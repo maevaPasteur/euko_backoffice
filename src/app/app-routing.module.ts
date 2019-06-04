@@ -14,6 +14,7 @@ import { ProjectKanbanComponent } from './projects/project-kanban/project-kanban
 import { ProjectToValidComponent  } from './projects/project-to-valid/project-to-valid.component';
 import { ParametersComponent } from './informations/parameters/parameters.component';
 import { ContractsComponent } from './informations/contracts/contracts.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'utilisateurs/investisseurs', component: InvestorsComponent },
   { path: 'utilisateurs/innactifs', component: NeutralComponent },
   { path: 'utilisateurs/mixtes', component: BothComponent },
+  { path: 'utilisateurs/:id', component: UserDetailsComponent },
   { path: 'projets', component: ProjectComponent },
   { path: 'projets/liste', component: ProjectListComponent },
   { path: 'projets/a-valider', component: ProjectToValidComponent },

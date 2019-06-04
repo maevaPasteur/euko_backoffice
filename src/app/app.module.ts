@@ -2,12 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import {AgePipe} from './services/pipes/age.pipe';
 import {FunctionPipe} from './services/pipes/function.pipe';
 import {SumPipe} from './services/pipes/sum.pipe';
+import {TranslatePipe} from './services/pipes/translate.pipe';
 
 import {AppRoutingModule} from './app-routing.module';
+
 import {AppComponent} from './app.component';
 import {NavComponent} from './nav/nav.component';
 import {UserListComponent} from './users/user-list/user-list.component';
@@ -23,6 +27,7 @@ import {ProjectToValidComponent} from './projects/project-to-valid/project-to-va
 import {ProjectKanbanComponent} from './projects/project-kanban/project-kanban.component';
 import { ParametersComponent } from './informations/parameters/parameters.component';
 import { ContractsComponent } from './informations/contracts/contracts.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
 
 @NgModule({
     declarations: [
@@ -42,16 +47,24 @@ import { ContractsComponent } from './informations/contracts/contracts.component
         AgePipe,
         FunctionPipe,
         SumPipe,
+        TranslatePipe,
         ParametersComponent,
-        ContractsComponent
+        ContractsComponent,
+        UserDetailsComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot([])
     ],
-    providers: [],
+    providers: [
+        {
+            provide: LocationStrategy, useClass: HashLocationStrategy
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

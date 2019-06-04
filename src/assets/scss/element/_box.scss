@@ -48,9 +48,10 @@
     background-color: white;
     border-radius: 3px;
     margin: 5px;
-    //height: calc( 100% - 10px);
+    height: calc( 100% - 10px);
     &:not(.no-border) {
       border: solid 2px $light-grey;
+      height: calc(100% - 14px);
     }
   }
 

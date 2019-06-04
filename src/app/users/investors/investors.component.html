@@ -1,8 +1,3 @@
-<div class="popin-container">
-    <div class="content">
-        <p>Hello</p>
-    </div>
-</div>
 <div class="container investor-list">
     <div class="box full">
         <div class="box-container">
@@ -54,7 +49,7 @@
                         <td><span class="text-bold">{{user | sum: 'offers':'accepted':'num'}}</span></td>
                         <td><span class="text-bold">{{user | sum: 'offers':'accepted':'perc'}}</span></td>
                         <td class="action-container">
-                            <p><i class="show icon-search"></i></p>
+                            <a routerLink="/utilisateurs/:{{ user.id }}"><i class="show icon-search"></i></a>
                             <p><i (click)="openDeletePopin(user.firstname)" class="remove icon-remove"></i></p>
                         </td>
                     </tr>

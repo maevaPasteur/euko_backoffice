@@ -22,23 +22,13 @@
           </thead>
           <tbody>
           <tr *ngFor="let user of users">
-            <td>
-              {{ user.username }}ans
-            </td>
-            <td>
-              {{ user.age }}
-            </td>
-            <td>
-              {{ user.localisation }}
-            </td>
-            <td>
-              {{user.registration | date:'M/d/yyyy' }}
-            </td>
-            <td>
-              {{ user.lastCo | date:'M/d/yyyy'  }}
-            </td>
+            <td>{{ user.username }}ans</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.localisation }}</td>
+            <td>{{user.registration | date:'M/d/yyyy' }}</td>
+            <td>{{ user.lastCo | date:'M/d/yyyy'  }}</td>
             <td class="action-container">
-              <p><i class="show icon-search"></i></p>
+              <a routerLink="/utilisateurs/:{{ user.id }}"><i class="show icon-search"></i></a>
               <p><i (click)="openDeletePopin(user.firstname)" class="remove icon-remove"></i></p>
             </td>
           </tr>

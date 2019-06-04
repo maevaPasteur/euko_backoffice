@@ -1,0 +1,87 @@
+<div class="container user-details">
+    <ng-container *ngIf="user">
+        <div class="box full">
+            <div class="box-container">
+                <div class="header">
+                    <h2 class="title">Détail de l'utilisateur</h2>
+                </div>
+            </div>
+        </div>
+        <div class="box medium">
+            <div class="box-container">
+                <div class="content info">
+                    <form>
+                        <p><label for="userId">Id : </label><input id="userId" value="{{ user.id }}"></p>
+                        <p><label for="userFirstname">Prénom : </label><input id="userFirstname" value="{{ user.firstname }}"></p>
+                        <p><label for="userName">Nom : </label><input id="userName" value="{{ user.lastname }}"></p>
+                        <p><label for="userDate">Date de naissance : </label><input type="date" id="userDate" value="{{ user.birthdate | date:'yyyy-mm-dd' }}"></p>
+                        <p><label for="userCity">Ville : </label><input id="userCity" value="{{ user.city }}"></p>
+                        <p><label for="userEmail">Nom : </label><input id="userEmail" value="{{ user.email }}"></p>
+                        <span class="btn-save">Enregistrer</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="box small">
+            <div class="box-container">
+                <div class="content info">
+                    <p (click)="openDeletePopin(x)" class="btn blue delete">Supprimer l'utilisateur</p>
+                    <p>Attention, cette action est irréversible.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box small">
+            <div class="box-container">
+                <div class="content info">
+                    <a routerLink="/utilisateurs/tous"><p class="see">Voir tout les utilisateurs</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="box full" *ngIf="user.projects.length">
+            <div class="box-container">
+                <div class="header">
+                    <h2 class="title">Ses demandes de micro-crédit</h2>
+                </div>
+            </div>
+        </div>
+        <div class="box small info" *ngFor="let project of user.projects">
+            <div class="box-container">
+                <div class="content">
+                    <p class="title bold big dark">{{ project.price }}€</p>
+                    <p>{{ project.description }}</p>
+                    <p *ngIf="project.timeLaps"><span class="title bold medium blue">{{ project.timeLaps }}</span> mois pour
+                        rembourser</p>
+                    <h2 *ngIf="project.offers.length">Les offres :</h2>
+                    <ul>
+                        <li *ngFor="let offer of project.offers"><p>{{ offer.interests }}% : {{ offer.state | translate }}</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box full" *ngIf="user.offers.length">
+            <div class="box-container">
+                <div class="header">
+                    <h2 class="title">Ses offres d'investissement</h2>
+                </div>
+            </div>
+        </div>
+        <div class="box small info" *ngFor="let offer of user.offers">
+            <div class="box-container">
+                <div class="content">
+                    <p class="title bold big dark">{{ offer.project.price }}€</p>
+                    <p>Projet {{ offer.project.state | translate }}</p>
+                    <p *ngIf="offer.project.timeLaps"><span class="title bold medium blue">{{ offer.project.timeLaps }}</span> mois pour
+                        rembourser</p>
+                    <h2>{{ offer.state | translate }}</h2>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="delete-popin hide">
+    <div>
+        <h2 *ngIf="userDelete">Êtes vous certain de vouloir supprimer {{ userDelete }} des utilisateurs ?</h2>
+        <p (click)="closeDeletePopin()" class="yes btn">Oui, je supprime</p>
+        <p (click)="closeDeletePopin()" class="return">Annuler</p>
+    </div>
+</div>
